@@ -1,0 +1,755 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NexusAI — Campus Assistant</title>
+  <meta name="description" content="NexusAI: One Front Door for Everything. Your AI-powered campus assistant for IT, HR, Finance, and Facilities." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --bg-primary: #0a0a0f;
+      --bg-secondary: #12121a;
+      --bg-tertiary: #1a1a2e;
+      --bg-card: rgba(255, 255, 255, 0.03);
+      --border: rgba(255, 255, 255, 0.06);
+      --border-hover: rgba(255, 255, 255, 0.12);
+      --text-primary: #e8e8f0;
+      --text-secondary: #8888a0;
+      --text-muted: #55556a;
+      --accent-blue: #4f8cff;
+      --accent-purple: #a855f7;
+      --accent-green: #34d399;
+      --accent-amber: #f59e0b;
+      --accent-red: #ef4444;
+      --accent-cyan: #22d3ee;
+      --gradient-main: linear-gradient(135deg, #4f8cff 0%, #a855f7 50%, #ec4899 100%);
+      --gradient-subtle: linear-gradient(135deg, rgba(79,140,255,0.1), rgba(168,85,247,0.1));
+      --shadow-glow: 0 0 40px rgba(79,140,255,0.08);
+      --radius: 12px;
+      --radius-sm: 8px;
+      --radius-lg: 16px;
+      --transition: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, sans-serif;
+      background: var(--bg-primary);
+      color: var(--text-primary);
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    .app-layout {
+      display: grid;
+      grid-template-columns: 1fr 280px;
+      height: 100vh;
+    }
+
+    /* ─── Chat Panel ─── */
+    .chat-panel {
+      display: flex;
+      flex-direction: column;
+      height: 100vh;
+      border-right: 1px solid var(--border);
+    }
+
+    .chat-header {
+      padding: 20px 28px;
+      border-bottom: 1px solid var(--border);
+      background: var(--bg-secondary);
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      flex-shrink: 0;
+    }
+
+    .chat-header-logo {
+      width: 40px;
+      height: 40px;
+      border-radius: var(--radius);
+      background: var(--gradient-main);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+      font-weight: 800;
+      color: #fff;
+      box-shadow: 0 4px 20px rgba(79,140,255,0.3);
+    }
+
+    .chat-header-text h1 {
+      font-size: 18px;
+      font-weight: 700;
+      background: var(--gradient-main);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .chat-header-text p {
+      font-size: 12px;
+      color: var(--text-muted);
+      margin-top: 1px;
+    }
+
+    .chat-messages {
+      flex: 1;
+      overflow-y: auto;
+      padding: 24px 28px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      scroll-behavior: smooth;
+    }
+
+    .chat-messages::-webkit-scrollbar { width: 4px; }
+    .chat-messages::-webkit-scrollbar-track { background: transparent; }
+    .chat-messages::-webkit-scrollbar-thumb { background: var(--border); border-radius: 4px; }
+
+    /* ─── Messages ─── */
+    .message { display: flex; gap: 12px; animation: msgIn 0.3s ease-out; max-width: 85%; }
+    .message.user { align-self: flex-end; flex-direction: row-reverse; }
+    .message.bot { align-self: flex-start; }
+
+    @keyframes msgIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .msg-avatar {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    .message.bot .msg-avatar {
+      background: var(--gradient-main);
+      color: #fff;
+      box-shadow: 0 2px 12px rgba(79,140,255,0.25);
+    }
+
+    .message.user .msg-avatar {
+      background: var(--bg-tertiary);
+      color: var(--text-secondary);
+      border: 1px solid var(--border);
+    }
+
+    .msg-body { display: flex; flex-direction: column; gap: 8px; min-width: 0; }
+
+    .msg-bubble {
+      padding: 12px 16px;
+      border-radius: var(--radius);
+      font-size: 14px;
+      line-height: 1.6;
+      white-space: pre-wrap;
+      word-break: break-word;
+    }
+
+    .message.user .msg-bubble {
+      background: linear-gradient(135deg, #4f8cff, #6366f1);
+      color: #fff;
+      border-bottom-right-radius: 4px;
+    }
+
+    .message.bot .msg-bubble {
+      background: var(--bg-tertiary);
+      border: 1px solid var(--border);
+      border-bottom-left-radius: 4px;
+    }
+
+    /* ─── Domain Badge ─── */
+    .domain-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      padding: 3px 10px;
+      border-radius: 20px;
+      font-size: 11px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .domain-badge.it { background: rgba(79,140,255,0.12); color: var(--accent-blue); }
+    .domain-badge.hr { background: rgba(168,85,247,0.12); color: var(--accent-purple); }
+    .domain-badge.finance { background: rgba(52,211,153,0.12); color: var(--accent-green); }
+    .domain-badge.facilities { background: rgba(245,158,11,0.12); color: var(--accent-amber); }
+    .domain-badge.unknown { background: rgba(239,68,68,0.12); color: var(--accent-red); }
+
+    .domain-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+    }
+
+    .domain-badge.it .domain-dot { background: var(--accent-blue); }
+    .domain-badge.hr .domain-dot { background: var(--accent-purple); }
+    .domain-badge.finance .domain-dot { background: var(--accent-green); }
+    .domain-badge.facilities .domain-dot { background: var(--accent-amber); }
+    .domain-badge.unknown .domain-dot { background: var(--accent-red); }
+
+    /* ─── Confidence Bar ─── */
+    .confidence-bar-wrap {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 11px;
+      color: var(--text-muted);
+    }
+
+    .confidence-track {
+      width: 80px;
+      height: 4px;
+      background: rgba(255,255,255,0.06);
+      border-radius: 4px;
+      overflow: hidden;
+    }
+
+    .confidence-fill {
+      height: 100%;
+      border-radius: 4px;
+      transition: width 0.5s ease;
+    }
+
+    .confidence-fill.high { background: var(--accent-green); }
+    .confidence-fill.medium { background: var(--accent-amber); }
+    .confidence-fill.low { background: var(--accent-red); }
+
+    /* ─── Source Chip ─── */
+    .source-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      padding: 4px 10px;
+      border-radius: 20px;
+      font-size: 11px;
+      color: var(--accent-cyan);
+      background: rgba(34,211,238,0.08);
+      border: 1px solid rgba(34,211,238,0.15);
+    }
+
+    .source-chip::before { content: "📄"; font-size: 10px; }
+
+    /* ─── Clarify Buttons ─── */
+    .clarify-options { display: flex; gap: 8px; flex-wrap: wrap; }
+
+    .clarify-btn {
+      padding: 8px 18px;
+      border-radius: 20px;
+      border: 1px solid var(--border-hover);
+      background: var(--bg-card);
+      color: var(--text-primary);
+      font-size: 13px;
+      font-weight: 500;
+      cursor: pointer;
+      transition: var(--transition);
+      font-family: inherit;
+    }
+
+    .clarify-btn:hover {
+      background: rgba(79,140,255,0.1);
+      border-color: var(--accent-blue);
+      color: var(--accent-blue);
+      transform: translateY(-1px);
+    }
+
+    /* ─── Handoff Card ─── */
+    .handoff-card {
+      background: linear-gradient(135deg, rgba(239,68,68,0.06), rgba(245,158,11,0.06));
+      border: 1px solid rgba(239,68,68,0.15);
+      border-radius: var(--radius);
+      padding: 14px 16px;
+      font-size: 13px;
+      line-height: 1.6;
+    }
+
+    .handoff-card .ticket-id {
+      font-family: 'Courier New', monospace;
+      font-weight: 700;
+      color: var(--accent-amber);
+    }
+
+    /* ─── Input Area ─── */
+    .chat-input-area {
+      padding: 16px 28px 20px;
+      border-top: 1px solid var(--border);
+      background: var(--bg-secondary);
+      flex-shrink: 0;
+    }
+
+    .example-chips {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 12px;
+      flex-wrap: wrap;
+    }
+
+    .example-chip {
+      padding: 6px 14px;
+      border-radius: 20px;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      color: var(--text-secondary);
+      font-size: 12px;
+      cursor: pointer;
+      transition: var(--transition);
+      font-family: inherit;
+      white-space: nowrap;
+    }
+
+    .example-chip:hover {
+      background: var(--gradient-subtle);
+      border-color: var(--accent-blue);
+      color: var(--text-primary);
+      transform: translateY(-1px);
+    }
+
+    .input-row {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+    }
+
+    #chat-input {
+      flex: 1;
+      padding: 12px 18px;
+      border-radius: 24px;
+      border: 1px solid var(--border);
+      background: var(--bg-tertiary);
+      color: var(--text-primary);
+      font-size: 14px;
+      font-family: inherit;
+      outline: none;
+      transition: var(--transition);
+    }
+
+    #chat-input:focus {
+      border-color: var(--accent-blue);
+      box-shadow: 0 0 0 3px rgba(79,140,255,0.1);
+    }
+
+    #chat-input::placeholder { color: var(--text-muted); }
+
+    #send-btn {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      border: none;
+      background: var(--gradient-main);
+      color: #fff;
+      font-size: 18px;
+      cursor: pointer;
+      transition: var(--transition);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    #send-btn:hover { transform: scale(1.05); box-shadow: 0 4px 20px rgba(79,140,255,0.3); }
+    #send-btn:disabled { opacity: 0.4; cursor: not-allowed; transform: none; }
+
+    /* ─── Metrics Panel ─── */
+    .metrics-panel {
+      background: var(--bg-secondary);
+      padding: 24px 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      overflow-y: auto;
+    }
+
+    .metrics-title {
+      font-size: 13px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--text-muted);
+    }
+
+    .metric-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 16px;
+      transition: var(--transition);
+    }
+
+    .metric-card:hover { border-color: var(--border-hover); }
+
+    .metric-label {
+      font-size: 11px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--text-muted);
+      margin-bottom: 6px;
+    }
+
+    .metric-value {
+      font-size: 32px;
+      font-weight: 800;
+      line-height: 1;
+    }
+
+    .metric-value.answered { color: var(--accent-green); }
+    .metric-value.clarified { color: var(--accent-amber); }
+    .metric-value.handed-off { color: var(--accent-red); }
+
+    .metrics-divider {
+      height: 1px;
+      background: var(--border);
+    }
+
+    .domain-legend {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .legend-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 12px;
+      color: var(--text-secondary);
+    }
+
+    .legend-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+    }
+
+    /* ─── Welcome ─── */
+    .welcome-message {
+      text-align: center;
+      padding: 40px 20px;
+      animation: fadeIn 0.5s ease;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    .welcome-icon {
+      width: 64px;
+      height: 64px;
+      border-radius: 20px;
+      background: var(--gradient-main);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 28px;
+      margin: 0 auto 16px;
+      box-shadow: 0 8px 40px rgba(79,140,255,0.25);
+    }
+
+    .welcome-message h2 {
+      font-size: 22px;
+      font-weight: 700;
+      margin-bottom: 8px;
+      background: var(--gradient-main);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .welcome-message p {
+      font-size: 14px;
+      color: var(--text-muted);
+      line-height: 1.5;
+      max-width: 400px;
+      margin: 0 auto;
+    }
+
+    /* ─── Loading Dots ─── */
+    .typing-indicator {
+      display: flex;
+      gap: 4px;
+      padding: 12px 16px;
+    }
+
+    .typing-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--text-muted);
+      animation: typing 1.4s infinite ease-in-out;
+    }
+
+    .typing-dot:nth-child(2) { animation-delay: 0.2s; }
+    .typing-dot:nth-child(3) { animation-delay: 0.4s; }
+
+    @keyframes typing {
+      0%, 60%, 100% { transform: translateY(0); opacity: 0.4; }
+      30% { transform: translateY(-6px); opacity: 1; }
+    }
+
+    /* ─── Responsive ─── */
+    @media (max-width: 768px) {
+      .app-layout { grid-template-columns: 1fr; }
+      .metrics-panel { display: none; }
+    }
+  </style>
+</head>
+<body>
+  <div class="app-layout">
+    <div class="chat-panel">
+      <div class="chat-header">
+        <div class="chat-header-logo">N</div>
+        <div class="chat-header-text">
+          <h1>NexusAI</h1>
+          <p>One Front Door for Everything</p>
+        </div>
+      </div>
+
+      <div class="chat-messages" id="chat-messages">
+        <div class="welcome-message" id="welcome">
+          <div class="welcome-icon">🎓</div>
+          <h2>Welcome to NexusAI</h2>
+          <p>Your AI-powered campus assistant. Ask me about IT, HR, Finance, or Facilities — I'll route you to the right answer instantly.</p>
+        </div>
+      </div>
+
+      <div class="chat-input-area">
+        <div class="example-chips" id="example-chips">
+          <button class="example-chip" data-query="How do I connect to the campus VPN?">🔌 Campus VPN</button>
+          <button class="example-chip" data-query="When is the tuition fee deadline?">💰 Fee Deadline</button>
+          <button class="example-chip" data-query="How do I apply for annual leave?">📋 Annual Leave</button>
+          <button class="example-chip" data-query="How do I book a meeting room?">🏢 Room Booking</button>
+        </div>
+        <div class="input-row">
+          <input type="text" id="chat-input" placeholder="Ask about IT, HR, Finance, or Facilities..." autocomplete="off" />
+          <button id="send-btn" title="Send message">➤</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="metrics-panel">
+      <div class="metrics-title">Live Metrics</div>
+
+      <div class="metric-card">
+        <div class="metric-label">Answered</div>
+        <div class="metric-value answered" id="metric-answered">0</div>
+      </div>
+
+      <div class="metric-card">
+        <div class="metric-label">Clarified</div>
+        <div class="metric-value clarified" id="metric-clarified">0</div>
+      </div>
+
+      <div class="metric-card">
+        <div class="metric-label">Handed Off</div>
+        <div class="metric-value handed-off" id="metric-handedoff">0</div>
+      </div>
+
+      <div class="metrics-divider"></div>
+
+      <div class="metrics-title">Domains</div>
+      <div class="domain-legend">
+        <div class="legend-item"><div class="legend-dot" style="background:var(--accent-blue)"></div> IT Support</div>
+        <div class="legend-item"><div class="legend-dot" style="background:var(--accent-purple)"></div> Human Resources</div>
+        <div class="legend-item"><div class="legend-dot" style="background:var(--accent-green)"></div> Finance & Fees</div>
+        <div class="legend-item"><div class="legend-dot" style="background:var(--accent-amber)"></div> Facilities</div>
+      </div>
+
+      <div class="metrics-divider"></div>
+      <div style="font-size:11px; color:var(--text-muted); line-height:1.5;">
+        <strong style="color:var(--text-secondary);">How it works</strong><br>
+        NexusAI uses TF-IDF cosine similarity to route your query to the right department, then retrieves the best FAQ match. 100% offline — no API keys needed.
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const DOMAIN_LABELS = {
+      it: "IT Support",
+      hr: "Human Resources",
+      finance: "Finance",
+      facilities: "Facilities",
+      unknown: "Unknown",
+    };
+
+    let sessionId = crypto.randomUUID();
+    const chatMessages = document.getElementById("chat-messages");
+    const chatInput = document.getElementById("chat-input");
+    const sendBtn = document.getElementById("send-btn");
+    const welcome = document.getElementById("welcome");
+
+    function scrollToBottom() {
+      chatMessages.scrollTop = chatMessages.scrollHeight;
+    }
+
+    function createDomainBadge(domain) {
+      return `<span class="domain-badge ${domain}"><span class="domain-dot"></span>${DOMAIN_LABELS[domain] || domain}</span>`;
+    }
+
+    function createConfidenceBar(confidence) {
+      const pct = Math.round(confidence * 100);
+      let cls = "high";
+      if (confidence < 0.35) cls = "low";
+      else if (confidence < 0.65) cls = "medium";
+      return `<div class="confidence-bar-wrap">
+        <div class="confidence-track"><div class="confidence-fill ${cls}" style="width:${pct}%"></div></div>
+        <span>${pct}%</span>
+      </div>`;
+    }
+
+    function addUserMessage(text) {
+      if (welcome) welcome.remove();
+      const div = document.createElement("div");
+      div.className = "message user";
+      div.innerHTML = `
+        <div class="msg-avatar">You</div>
+        <div class="msg-body">
+          <div class="msg-bubble">${escapeHtml(text)}</div>
+        </div>`;
+      chatMessages.appendChild(div);
+      scrollToBottom();
+    }
+
+    function addBotMessage(parts) {
+      const div = document.createElement("div");
+      div.className = "message bot";
+
+      let bodyHtml = `<div class="msg-avatar">N</div><div class="msg-body">`;
+
+      for (const part of parts) {
+        bodyHtml += `<div style="margin-bottom:8px">`;
+        bodyHtml += createDomainBadge(part.domain);
+        bodyHtml += ` ` + createConfidenceBar(part.confidence);
+        bodyHtml += `</div>`;
+
+        if (part.action === "answer") {
+          bodyHtml += `<div class="msg-bubble">${escapeHtml(part.answer)}</div>`;
+          if (part.source) {
+            bodyHtml += `<div><span class="source-chip">${escapeHtml(part.source)}</span></div>`;
+          }
+        } else if (part.action === "clarify") {
+          bodyHtml += `<div class="msg-bubble">${escapeHtml(part.answer)}</div>`;
+          bodyHtml += `<div class="clarify-options">`;
+          for (const opt of part.options) {
+            bodyHtml += `<button class="clarify-btn" data-domain="${opt}">${DOMAIN_LABELS[opt] || opt}</button>`;
+          }
+          bodyHtml += `</div>`;
+        } else if (part.action === "handoff") {
+          bodyHtml += `<div class="handoff-card">${escapeHtml(part.answer).replace(/Ticket ID: (TKT-\w+)/, 'Ticket ID: <span class="ticket-id">$1</span>')}</div>`;
+        }
+      }
+
+      bodyHtml += `</div>`;
+      div.innerHTML = bodyHtml;
+      chatMessages.appendChild(div);
+
+      div.querySelectorAll(".clarify-btn").forEach((btn) => {
+        btn.addEventListener("click", () => sendMessage(btn.dataset.domain));
+      });
+
+      scrollToBottom();
+    }
+
+    function addTypingIndicator() {
+      const div = document.createElement("div");
+      div.className = "message bot";
+      div.id = "typing-indicator";
+      div.innerHTML = `
+        <div class="msg-avatar">N</div>
+        <div class="msg-body">
+          <div class="typing-indicator">
+            <div class="typing-dot"></div>
+            <div class="typing-dot"></div>
+            <div class="typing-dot"></div>
+          </div>
+        </div>`;
+      chatMessages.appendChild(div);
+      scrollToBottom();
+    }
+
+    function removeTypingIndicator() {
+      const el = document.getElementById("typing-indicator");
+      if (el) el.remove();
+    }
+
+    function escapeHtml(text) {
+      const d = document.createElement("div");
+      d.textContent = text;
+      return d.innerHTML;
+    }
+
+    async function sendMessage(text) {
+      if (!text || !text.trim()) return;
+      const trimmed = text.trim();
+
+      addUserMessage(trimmed);
+      chatInput.value = "";
+      sendBtn.disabled = true;
+      addTypingIndicator();
+
+      try {
+        const res = await fetch("/chat", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ session_id: sessionId, message: trimmed }),
+        });
+
+        const data = await res.json();
+        sessionId = data.session_id;
+        removeTypingIndicator();
+        addBotMessage(data.parts);
+        updateMetrics();
+      } catch (err) {
+        removeTypingIndicator();
+        addBotMessage([
+          {
+            domain: "unknown",
+            confidence: 0,
+            action: "handoff",
+            answer: "Connection error. Please make sure the server is running.",
+          },
+        ]);
+      }
+
+      sendBtn.disabled = false;
+      chatInput.focus();
+    }
+
+    async function updateMetrics() {
+      try {
+        const res = await fetch("/metrics");
+        const data = await res.json();
+        document.getElementById("metric-answered").textContent = data.answered;
+        document.getElementById("metric-clarified").textContent = data.clarified;
+        document.getElementById("metric-handedoff").textContent = data.handed_off;
+      } catch (_) {}
+    }
+
+    sendBtn.addEventListener("click", () => sendMessage(chatInput.value));
+    chatInput.addEventListener("keydown", (e) => {
+      if (e.key === "Enter" && !e.shiftKey) {
+        e.preventDefault();
+        sendMessage(chatInput.value);
+      }
+    });
+
+    document.querySelectorAll(".example-chip").forEach((chip) => {
+      chip.addEventListener("click", () => {
+        sendMessage(chip.dataset.query);
+      });
+    });
+
+    updateMetrics();
+  </script>
+</body>
+</html>

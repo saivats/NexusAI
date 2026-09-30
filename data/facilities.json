@@ -1,0 +1,92 @@
+[
+  {
+    "id": "FAC-001",
+    "question": "How do I report a maintenance issue in my hostel room?",
+    "answer": "Submit a maintenance request at facilities.university.edu/maintenance. Select your building and room number, describe the issue (plumbing, electrical, furniture, etc.), and upload a photo if possible. Non-urgent requests are addressed within 3 business days. For emergencies (flooding, power outage), call ext. 5555.",
+    "keywords": ["maintenance", "repair", "fix", "broken", "hostel", "dorm", "room", "issue", "problem"]
+  },
+  {
+    "id": "FAC-002",
+    "question": "How do I book a room or meeting space on campus?",
+    "answer": "Reserve rooms through the Room Booking System at facilities.university.edu/rooms. Select date, time, capacity, and required equipment (projector, whiteboard, video conferencing). Bookings can be made up to 30 days in advance. Cancellations must be made at least 24 hours prior.",
+    "keywords": ["book", "room", "meeting", "reserve", "reservation", "conference room", "space", "venue"]
+  },
+  {
+    "id": "FAC-003",
+    "question": "What are the library operating hours?",
+    "answer": "The Main Library is open Monday-Friday 7:00 AM to 11:00 PM, Saturday 9:00 AM to 9:00 PM, and Sunday 10:00 AM to 8:00 PM. During exam periods, hours extend to 24/7 from 2 weeks before finals through the exam period. Branch libraries may have different hours.",
+    "keywords": ["library", "hours", "open", "close", "operating", "study", "reading room"]
+  },
+  {
+    "id": "FAC-004",
+    "question": "How do I get a replacement student ID card?",
+    "answer": "Visit the Campus Card Office in the Student Center, Room 105. Bring a government-issued photo ID. Replacement cards cost $25 and are printed on the spot. Report lost cards immediately at campuscard.university.edu to deactivate the old card and prevent unauthorized access.",
+    "keywords": ["id card", "student card", "replacement", "lost card", "campus card", "new card"]
+  },
+  {
+    "id": "FAC-005",
+    "question": "How do I request a parking permit?",
+    "answer": "Apply for a parking permit at facilities.university.edu/parking. Student permits are $200/semester for surface lots and $400/semester for garages. Upload your vehicle registration and select your preferred lot. Permits are mailed within 5 business days or can be picked up at the Security Office.",
+    "keywords": ["parking", "permit", "car", "vehicle", "lot", "garage", "park"]
+  },
+  {
+    "id": "FAC-006",
+    "question": "How do I access the gym and recreation facilities?",
+    "answer": "All registered students have free access to the Recreation Center with their student ID card. Hours are Monday-Friday 6:00 AM to 10:00 PM, weekends 8:00 AM to 8:00 PM. Locker rentals are $30/semester. Group fitness classes require online sign-up at recreation.university.edu.",
+    "keywords": ["gym", "recreation", "fitness", "exercise", "sports", "workout", "recreation center"]
+  },
+  {
+    "id": "FAC-007",
+    "question": "How do I report a safety or security concern on campus?",
+    "answer": "For emergencies, call Campus Security at ext. 9111. For non-emergencies, submit a report at security.university.edu/report or use the campus safety app. Blue light emergency phones are located every 200 meters across campus. Security patrols operate 24/7.",
+    "keywords": ["safety", "security", "emergency", "concern", "report", "incident", "danger", "threat"]
+  },
+  {
+    "id": "FAC-008",
+    "question": "How do I apply for campus housing (hostel accommodation)?",
+    "answer": "Apply for housing at housing.university.edu by May 1 for the fall semester. Select your room preference (single, double, suite). Priority is given to first-year students and those with accessibility needs. Room assignments are posted by July 15. A $500 housing deposit is required.",
+    "keywords": ["housing", "hostel", "accommodation", "dorm", "dormitory", "residence", "room assignment", "living"]
+  },
+  {
+    "id": "FAC-009",
+    "question": "How do I request extra cleaning in a shared space?",
+    "answer": "Submit a cleaning request at facilities.university.edu/cleaning for common areas, kitchens, or bathrooms. Specify the building, floor, and area. Routine cleaning is daily for high-traffic areas. Special requests (post-event cleanup, deep cleaning) require 48 hours notice.",
+    "keywords": ["cleaning", "clean", "housekeeping", "janitorial", "sanitation", "dirty", "mess"]
+  },
+  {
+    "id": "FAC-010",
+    "question": "Where are the campus dining options and what are the meal plan hours?",
+    "answer": "The Main Dining Hall serves breakfast (7-9:30 AM), lunch (11:30 AM-2 PM), and dinner (5-8 PM). The Food Court in the Student Center is open 10 AM-10 PM with halal, vegan, and gluten-free options. Meal plan balances can be checked at dining.university.edu.",
+    "keywords": ["dining", "food", "cafeteria", "meal plan", "eat", "restaurant", "menu", "canteen"]
+  },
+  {
+    "id": "FAC-011",
+    "question": "How do I request an accessibility accommodation for a building?",
+    "answer": "Contact the Accessibility Office at accessibility@university.edu or visit their office in the Admin Building, Room 201. They coordinate ramp installations, automatic door openers, accessible furniture, and signage. Requests are assessed within 5 business days.",
+    "keywords": ["accessibility", "accessible", "disability", "wheelchair", "ramp", "accommodation", "ada"]
+  },
+  {
+    "id": "FAC-012",
+    "question": "How do I report a pest control issue?",
+    "answer": "Submit a pest control request at facilities.university.edu/maintenance and select 'Pest Control' as the category. Specify the type of pest if known and the location. Pest control services respond within 24 hours for urgent cases (rodents, bed bugs) and 3 days for routine cases.",
+    "keywords": ["pest", "bug", "insect", "rodent", "mice", "rat", "cockroach", "exterminator"]
+  },
+  {
+    "id": "FAC-013",
+    "question": "How do I use the campus shuttle service?",
+    "answer": "Campus shuttles run every 15 minutes on 4 routes during the academic year, 7:00 AM to 11:00 PM. Track real-time locations at shuttle.university.edu or in the campus app. Show your student ID to board. Weekend service runs every 30 minutes on reduced routes.",
+    "keywords": ["shuttle", "bus", "transport", "ride", "campus bus", "route", "transit"]
+  },
+  {
+    "id": "FAC-014",
+    "question": "How do I get furniture repaired or replaced in my hostel?",
+    "answer": "Submit a furniture request at facilities.university.edu/maintenance under 'Furniture'. Common items (desk chairs, bed frames, wardrobes) are replaced within 5 business days if damaged through normal wear. Damage from misuse may be charged to your housing account after inspection.",
+    "keywords": ["furniture", "desk", "chair", "bed", "wardrobe", "replace", "broken furniture"]
+  },
+  {
+    "id": "FAC-015",
+    "question": "How do I reserve outdoor spaces for an event?",
+    "answer": "Book outdoor venues (quad, amphitheater, sports fields) at facilities.university.edu/events. Submit your event details, expected attendance, and any special requirements (stage, power, tents) at least 2 weeks in advance. A $100 refundable deposit applies. Events past 10 PM require special approval.",
+    "keywords": ["outdoor", "event", "venue", "field", "quad", "amphitheater", "event space", "book event"]
+  }
+]

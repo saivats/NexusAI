@@ -1,0 +1,51 @@
+[
+  {"query": "How do I connect to the campus VPN?", "expected_domain": "it", "expected_faq": "IT-001", "type": "simple"},
+  {"query": "I forgot my university password", "expected_domain": "it", "expected_faq": "IT-002", "type": "simple"},
+  {"query": "How to connect to WiFi on campus?", "expected_domain": "it", "expected_faq": "IT-003", "type": "simple"},
+  {"query": "Set up email on my iPhone", "expected_domain": "it", "expected_faq": "IT-004", "type": "simple"},
+  {"query": "How do I access LMS for my courses?", "expected_domain": "it", "expected_faq": "IT-005", "type": "simple"},
+  {"query": "I want to report a phishing email", "expected_domain": "it", "expected_faq": "IT-007", "type": "simple"},
+  {"query": "How do I print on campus printers?", "expected_domain": "it", "expected_faq": "IT-008", "type": "simple"},
+  {"query": "How to set up two-factor authentication?", "expected_domain": "it", "expected_faq": "IT-010", "type": "simple"},
+
+  {"query": "How do I apply for annual leave?", "expected_domain": "hr", "expected_faq": "HR-001", "type": "simple"},
+  {"query": "Where can I see my payslip?", "expected_domain": "hr", "expected_faq": "HR-002", "type": "simple"},
+  {"query": "What is the sick leave policy?", "expected_domain": "hr", "expected_faq": "HR-003", "type": "simple"},
+  {"query": "How to apply for maternity leave?", "expected_domain": "hr", "expected_faq": "HR-005", "type": "simple"},
+  {"query": "What are the working hours at university?", "expected_domain": "hr", "expected_faq": "HR-006", "type": "simple"},
+  {"query": "How do I enroll in health insurance?", "expected_domain": "hr", "expected_faq": "HR-008", "type": "simple"},
+  {"query": "How do I submit my resignation?", "expected_domain": "hr", "expected_faq": "HR-011", "type": "simple"},
+  {"query": "How do I claim overtime?", "expected_domain": "hr", "expected_faq": "HR-013", "type": "simple"},
+
+  {"query": "When is the tuition fee deadline?", "expected_domain": "finance", "expected_faq": "FIN-001", "type": "simple"},
+  {"query": "How do I get a refund for tuition fees?", "expected_domain": "finance", "expected_faq": "FIN-002", "type": "simple"},
+  {"query": "I want to set up a payment plan for tuition", "expected_domain": "finance", "expected_faq": "FIN-003", "type": "simple"},
+  {"query": "How do I check my student account balance?", "expected_domain": "finance", "expected_faq": "FIN-004", "type": "simple"},
+  {"query": "How to apply for financial aid and scholarships?", "expected_domain": "finance", "expected_faq": "FIN-005", "type": "simple"},
+  {"query": "How do I pay tuition fees online?", "expected_domain": "finance", "expected_faq": "FIN-006", "type": "simple"},
+  {"query": "How to get a tax receipt for tuition?", "expected_domain": "finance", "expected_faq": "FIN-007", "type": "simple"},
+
+  {"query": "How do I report a maintenance issue in my hostel?", "expected_domain": "facilities", "expected_faq": "FAC-001", "type": "simple"},
+  {"query": "How to book a meeting room on campus?", "expected_domain": "facilities", "expected_faq": "FAC-002", "type": "simple"},
+  {"query": "What are the library opening hours?", "expected_domain": "facilities", "expected_faq": "FAC-003", "type": "simple"},
+  {"query": "How do I get a parking permit?", "expected_domain": "facilities", "expected_faq": "FAC-005", "type": "simple"},
+  {"query": "How do I access the campus gym?", "expected_domain": "facilities", "expected_faq": "FAC-006", "type": "simple"},
+
+  {"query": "I need help with my password and also want to check my payslip", "expected_domain": "multi", "expected_faq": "multi", "type": "multi-topic", "parts": [{"expected_domain": "it", "expected_faq": "IT-002"}, {"expected_domain": "hr", "expected_faq": "HR-002"}]},
+  {"query": "How to connect to VPN and when is the fee deadline?", "expected_domain": "multi", "expected_faq": "multi", "type": "multi-topic", "parts": [{"expected_domain": "it", "expected_faq": "IT-001"}, {"expected_domain": "finance", "expected_faq": "FIN-001"}]},
+  {"query": "Book a meeting room, also how do I apply for leave?", "expected_domain": "multi", "expected_faq": "multi", "type": "multi-topic", "parts": [{"expected_domain": "facilities", "expected_faq": "FAC-002"}, {"expected_domain": "hr", "expected_faq": "HR-001"}]},
+  {"query": "How do I report hostel maintenance and also reset my password?", "expected_domain": "multi", "expected_faq": "multi", "type": "multi-topic", "parts": [{"expected_domain": "facilities", "expected_faq": "FAC-001"}, {"expected_domain": "it", "expected_faq": "IT-002"}]},
+  {"query": "I need to check my account balance and get a parking permit", "expected_domain": "multi", "expected_faq": "multi", "type": "multi-topic", "parts": [{"expected_domain": "finance", "expected_faq": "FIN-004"}, {"expected_domain": "facilities", "expected_faq": "FAC-005"}]},
+
+  {"query": "How do I access the network from off campus?", "expected_domain": "it", "expected_faq": "IT-001", "type": "ambiguous"},
+  {"query": "I need time off work", "expected_domain": "hr", "expected_faq": "HR-001", "type": "ambiguous"},
+  {"query": "Something is broken in my dorm", "expected_domain": "facilities", "expected_faq": "FAC-001", "type": "ambiguous"},
+  {"query": "I need money help for school", "expected_domain": "finance", "expected_faq": "FIN-005", "type": "ambiguous"},
+  {"query": "Where do I eat on campus?", "expected_domain": "facilities", "expected_faq": "FAC-010", "type": "ambiguous"},
+
+  {"query": "What is the meaning of life?", "expected_domain": "none", "expected_faq": "none", "type": "out-of-scope"},
+  {"query": "Can you help me write my thesis?", "expected_domain": "none", "expected_faq": "none", "type": "out-of-scope"},
+  {"query": "What courses should I take next semester?", "expected_domain": "none", "expected_faq": "none", "type": "out-of-scope"},
+  {"query": "Tell me a joke", "expected_domain": "none", "expected_faq": "none", "type": "out-of-scope"},
+  {"query": "How do I get into graduate school?", "expected_domain": "none", "expected_faq": "none", "type": "out-of-scope"}
+]

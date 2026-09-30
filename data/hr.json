@@ -1,0 +1,92 @@
+[
+  {
+    "id": "HR-001",
+    "question": "How do I apply for annual leave?",
+    "answer": "Log in to the HR portal at hr.university.edu, navigate to 'Leave Management', and select 'Apply for Leave'. Choose 'Annual Leave', select dates, and submit. Your line manager will receive an approval notification. Allow 2 business days for processing.",
+    "keywords": ["annual", "leave", "vacation", "holiday", "time off", "pto", "days off"]
+  },
+  {
+    "id": "HR-002",
+    "question": "How do I view my payslip?",
+    "answer": "Access your payslip at hr.university.edu/payroll. Navigate to 'My Payslips' and select the relevant month. Payslips are available by the 25th of each month. You can download PDF copies or set up email delivery under 'Payslip Preferences'.",
+    "keywords": ["payslip", "salary", "pay", "wages", "payment", "payroll", "earnings", "paycheck"]
+  },
+  {
+    "id": "HR-003",
+    "question": "What is the policy for sick leave?",
+    "answer": "Staff are entitled to 12 days of paid sick leave per academic year. Sick leave exceeding 3 consecutive days requires a medical certificate uploaded to the HR portal. Unused sick leave does not carry over. For extended illness, contact HR for long-term disability options.",
+    "keywords": ["sick", "leave", "illness", "medical", "health", "unwell", "doctor"]
+  },
+  {
+    "id": "HR-004",
+    "question": "How do I update my bank account details for payroll?",
+    "answer": "Log in to hr.university.edu, go to 'My Profile' > 'Banking Details'. Update your account number, routing number, and bank name. Changes must be submitted by the 15th of the month to take effect on the next pay cycle. A confirmation email is sent after verification.",
+    "keywords": ["bank", "account", "payroll", "direct deposit", "banking", "payment details"]
+  },
+  {
+    "id": "HR-005",
+    "question": "How do I apply for maternity or paternity leave?",
+    "answer": "Submit a parental leave application through hr.university.edu/leave at least 8 weeks before the expected date. Maternity leave is 16 weeks paid; paternity leave is 4 weeks paid. Attach relevant medical documentation. HR will confirm your leave schedule within 5 business days.",
+    "keywords": ["maternity", "paternity", "parental", "leave", "baby", "pregnancy", "childbirth"]
+  },
+  {
+    "id": "HR-006",
+    "question": "What are the university working hours?",
+    "answer": "Standard working hours are Monday to Friday, 9:00 AM to 5:00 PM, with a 1-hour lunch break. Flexible working arrangements are available with manager approval. Academic staff may have different schedules based on teaching commitments.",
+    "keywords": ["working hours", "schedule", "time", "office hours", "shift", "work time", "business hours"]
+  },
+  {
+    "id": "HR-007",
+    "question": "How do I request a reference letter from HR?",
+    "answer": "Submit a reference letter request at hr.university.edu/services. Specify the purpose (employment, visa, rental) and the recipient details. Standard employment verification letters are issued within 3 business days. Personalized reference letters require manager input and take up to 7 days.",
+    "keywords": ["reference", "letter", "recommendation", "employment verification", "verification"]
+  },
+  {
+    "id": "HR-008",
+    "question": "How do I enroll in the staff health insurance plan?",
+    "answer": "Visit hr.university.edu/benefits during the open enrollment period (November 1-30). Compare plan options, select your coverage tier (individual, couple, family), and designate beneficiaries. New hires have 30 days from their start date to enroll. Changes take effect the following month.",
+    "keywords": ["health", "insurance", "medical", "benefits", "coverage", "dental", "vision", "enrollment"]
+  },
+  {
+    "id": "HR-009",
+    "question": "What is the process for reporting workplace harassment?",
+    "answer": "Contact the Office of Equity and Inclusion at equity@university.edu or call the confidential hotline at ext. 9999. You can also submit a formal complaint through hr.university.edu/compliance. All reports are investigated within 10 business days. Anonymity is preserved where possible.",
+    "keywords": ["harassment", "complaint", "workplace", "discrimination", "bullying", "report", "misconduct"]
+  },
+  {
+    "id": "HR-010",
+    "question": "How do I access staff training and development programs?",
+    "answer": "Browse available programs at hr.university.edu/training. Categories include leadership, technical skills, compliance, and wellness. Register online and get manager approval. Full-time staff receive a $2,000 annual professional development budget. Certificates are added to your HR profile upon completion.",
+    "keywords": ["training", "development", "course", "workshop", "learning", "professional development", "upskilling"]
+  },
+  {
+    "id": "HR-011",
+    "question": "How do I submit a resignation?",
+    "answer": "Submit a formal resignation letter to your department head and HR at hr.university.edu/separation. The notice period is 4 weeks for support staff and 8 weeks for academic staff. Schedule an exit interview with HR. Final pay and accrued leave payout are processed within 30 days of your last day.",
+    "keywords": ["resignation", "resign", "quit", "leaving", "notice", "exit", "termination"]
+  },
+  {
+    "id": "HR-012",
+    "question": "How do I apply for study leave?",
+    "answer": "Submit a study leave application at hr.university.edu/leave. Attach your admission letter and course outline. Full-time staff with 2+ years of service qualify for up to 10 days of paid study leave per year. Additional unpaid leave may be granted with department approval.",
+    "keywords": ["study", "leave", "exam", "education", "academic leave", "learning", "course"]
+  },
+  {
+    "id": "HR-013",
+    "question": "How do I claim overtime pay?",
+    "answer": "Log overtime hours in the HR portal under 'Timesheet' > 'Overtime Claims' by the 5th of the following month. Attach manager-approved authorization. Overtime is paid at 1.5x the standard rate for weekdays and 2x for weekends and public holidays. Academic staff are not eligible for overtime.",
+    "keywords": ["overtime", "extra hours", "additional pay", "time and a half", "overwork"]
+  },
+  {
+    "id": "HR-014",
+    "question": "What are the university public holidays?",
+    "answer": "The university observes 12 public holidays annually, including New Year's Day, Independence Day, Thanksgiving, and a winter break (Dec 24-Jan 1). The complete holiday calendar is published at hr.university.edu/calendar each August. Department-specific closures may apply.",
+    "keywords": ["holidays", "public holidays", "day off", "closure", "break", "calendar"]
+  },
+  {
+    "id": "HR-015",
+    "question": "How do I update my emergency contact information?",
+    "answer": "Log in to hr.university.edu, navigate to 'My Profile' > 'Emergency Contacts'. Add or update your primary and secondary emergency contacts with their name, relationship, phone number, and email. It is mandatory to keep this information current and review it annually.",
+    "keywords": ["emergency", "contact", "next of kin", "personal information", "profile", "update"]
+  }
+]
