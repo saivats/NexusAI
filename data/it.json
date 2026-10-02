@@ -3,90 +3,120 @@
     "id": "IT-001",
     "question": "How do I connect to the campus VPN?",
     "answer": "Download the university VPN client from vpn.university.edu. Log in with your campus credentials, select 'Campus Network', and click Connect. For macOS, use the built-in L2TP configuration under System Preferences > Network.",
-    "keywords": ["vpn", "connect", "remote", "network", "off-campus", "virtual private network"]
+    "keywords": ["vpn", "connect", "remote", "network", "off-campus", "virtual private network"],
+    "source_title": "IT VPN Setup Guide",
+    "last_updated": "2026-08"
   },
   {
     "id": "IT-002",
     "question": "How do I reset my university password?",
     "answer": "Visit identity.university.edu/reset, enter your student or staff ID, and follow the email verification link. Passwords must be at least 12 characters with a mix of uppercase, lowercase, numbers, and symbols. Resets take effect within 5 minutes.",
-    "keywords": ["password", "reset", "forgot", "change", "login", "credentials", "locked"]
+    "keywords": ["password", "reset", "forgot", "change", "login", "credentials", "locked", "locked out", "cant login", "sign in", "log in"],
+    "source_title": "Account Management FAQ",
+    "last_updated": "2026-08"
   },
   {
     "id": "IT-003",
     "question": "How do I connect to campus WiFi?",
     "answer": "Select the 'CampusSecure' network from your device WiFi settings. Use your university email as the username and your campus password. If prompted for a certificate, accept the university root CA. Eduroam is also available for inter-university visitors.",
-    "keywords": ["wifi", "wireless", "internet", "connect", "eduroam", "campus network", "wi-fi"]
+    "keywords": ["wifi", "wi-fi", "wireless", "internet", "connect", "eduroam", "campus network", "network", "connection", "not working", "slow", "cant connect", "no internet", "disconnected", "signal", "hotspot"],
+    "source_title": "Campus WiFi Guide",
+    "last_updated": "2026-08"
   },
   {
     "id": "IT-004",
     "question": "How do I set up my university email on my phone?",
     "answer": "Open your mail app and add a new Exchange/Microsoft 365 account. Server: outlook.office365.com. Use your full university email as the username. Enable two-factor authentication via the Authenticator app first at mfa.university.edu.",
-    "keywords": ["email", "phone", "mobile", "outlook", "mail", "setup", "configure"]
+    "keywords": ["email", "phone", "mobile", "outlook", "mail", "setup", "configure"],
+    "source_title": "Email Setup Guide",
+    "last_updated": "2026-08"
   },
   {
     "id": "IT-005",
     "question": "How do I access the learning management system (LMS)?",
     "answer": "Navigate to lms.university.edu and log in with your campus credentials. Courses are auto-enrolled based on your registration. If a course is missing, contact your department coordinator to verify your enrollment record.",
-    "keywords": ["lms", "canvas", "moodle", "learning", "courses", "online", "classroom", "blackboard"]
+    "keywords": ["lms", "canvas", "moodle", "learning", "courses", "online", "classroom", "blackboard"],
+    "source_title": "LMS Access Guide",
+    "last_updated": "2026-08"
   },
   {
     "id": "IT-006",
     "question": "How do I request software for my university computer?",
     "answer": "Submit a software request through the IT Service Portal at servicedesk.university.edu/software. Include the software name, version, license type, and business justification. Standard requests are fulfilled within 3 business days.",
-    "keywords": ["software", "install", "application", "license", "request", "program", "download"]
+    "keywords": ["software", "install", "application", "license", "request", "program", "download"],
+    "source_title": "Software Request Portal",
+    "last_updated": "2026-07"
   },
   {
     "id": "IT-007",
     "question": "How do I report a phishing email?",
     "answer": "Forward the suspicious email as an attachment to phishing@university.edu. Do not click any links or download attachments. You can also use the 'Report Phishing' button in Outlook. The security team will analyze and respond within 24 hours.",
-    "keywords": ["phishing", "spam", "suspicious", "email", "scam", "security", "malware", "virus"]
+    "keywords": ["phishing", "spam", "suspicious", "email", "scam", "security", "malware", "virus"],
+    "source_title": "Cybersecurity FAQ",
+    "last_updated": "2026-08"
   },
   {
     "id": "IT-008",
     "question": "How do I print documents on campus?",
     "answer": "Upload documents to print.university.edu or send them to campusprint@university.edu. Swipe your student ID at any campus printer to release your job. Each student gets 500 free pages per semester. Color printing costs $0.10 per page.",
-    "keywords": ["print", "printer", "printing", "paper", "copy", "scan"]
+    "keywords": ["print", "printer", "printing", "paper", "copy", "scan"],
+    "source_title": "Campus Printing Guide",
+    "last_updated": "2026-07"
   },
   {
     "id": "IT-009",
     "question": "How do I get remote desktop access to lab computers?",
     "answer": "Use the university Remote Lab portal at remotelab.university.edu. Select your department lab and an available machine. Sessions are limited to 4 hours during peak times. You need VPN connected first if off-campus.",
-    "keywords": ["remote", "desktop", "lab", "computer", "access", "virtual", "rdp"]
+    "keywords": ["remote", "desktop", "lab", "computer", "access", "virtual", "rdp"],
+    "source_title": "Remote Lab Access Guide",
+    "last_updated": "2026-07"
   },
   {
     "id": "IT-010",
     "question": "How do I set up two-factor authentication?",
     "answer": "Visit mfa.university.edu and log in with your campus credentials. Download the Microsoft Authenticator app on your phone, scan the QR code displayed, and confirm the verification code. Backup codes are available for download.",
-    "keywords": ["two-factor", "2fa", "mfa", "authentication", "authenticator", "security", "verification"]
+    "keywords": ["two-factor", "2fa", "mfa", "authentication", "authenticator", "security", "verification"],
+    "source_title": "MFA Setup Guide",
+    "last_updated": "2026-08"
   },
   {
     "id": "IT-011",
     "question": "How do I access the university VPN from Linux?",
     "answer": "Install OpenConnect via your package manager (apt install openconnect). Connect using: sudo openconnect vpn.university.edu. Enter your campus credentials when prompted. For persistent connections, configure NetworkManager with the OpenConnect plugin.",
-    "keywords": ["linux", "vpn", "ubuntu", "openconnect", "terminal", "command line"]
+    "keywords": ["linux", "vpn", "ubuntu", "openconnect", "terminal", "command line"],
+    "source_title": "Linux VPN Guide",
+    "last_updated": "2026-07"
   },
   {
     "id": "IT-012",
     "question": "How do I share files with classmates using university storage?",
     "answer": "Log in to OneDrive at onedrive.university.edu with your campus credentials. Each student has 1TB of storage. Right-click a file or folder, select 'Share', and enter your classmates' university email addresses. Set permissions to 'Can Edit' or 'Can View'.",
-    "keywords": ["share", "files", "storage", "onedrive", "cloud", "drive", "collaborate", "google drive"]
+    "keywords": ["share", "files", "storage", "onedrive", "cloud", "drive", "collaborate", "google drive"],
+    "source_title": "Cloud Storage FAQ",
+    "last_updated": "2026-08"
   },
   {
     "id": "IT-013",
     "question": "My laptop won't connect to the projector in the classroom. What do I do?",
     "answer": "Ensure you're using the correct cable (HDMI or USB-C). Press Windows+P or Cmd+F1 to toggle display output. If the projector doesn't detect your laptop, try restarting both devices. For persistent issues, call the AV helpdesk at ext. 4455.",
-    "keywords": ["projector", "display", "presentation", "hdmi", "screen", "classroom", "av"]
+    "keywords": ["projector", "display", "presentation", "hdmi", "screen", "classroom", "av"],
+    "source_title": "AV Troubleshooting Guide",
+    "last_updated": "2026-07"
   },
   {
     "id": "IT-014",
     "question": "How do I check my internet usage quota?",
     "answer": "Log in to netportal.university.edu with your campus credentials. Your dashboard shows current usage, remaining quota, and billing cycle. Residential students have a 100GB monthly cap; academic usage on campus is unlimited.",
-    "keywords": ["internet", "usage", "quota", "bandwidth", "data", "limit", "cap"]
+    "keywords": ["internet", "usage", "quota", "bandwidth", "data", "limit", "cap"],
+    "source_title": "Network Usage FAQ",
+    "last_updated": "2026-08"
   },
   {
     "id": "IT-015",
     "question": "How do I submit an IT support ticket?",
     "answer": "Visit servicedesk.university.edu and click 'New Ticket'. Select the appropriate category, describe your issue in detail, and attach screenshots if relevant. You'll receive a confirmation email with a ticket number. Priority issues can also call the helpdesk at ext. 1234.",
-    "keywords": ["support", "ticket", "help", "issue", "problem", "helpdesk", "service desk", "it support"]
+    "keywords": ["support", "ticket", "help", "issue", "problem", "helpdesk", "service desk", "it support"],
+    "source_title": "IT Service Desk Guide",
+    "last_updated": "2026-08"
   }
 ]

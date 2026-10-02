@@ -1,0 +1,11 @@
+services:
+  nexusai:
+    build: .
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./data:/app/data
+      - ./config.yaml:/app/config.yaml
+    env_file:
+      - .env
+    restart: unless-stopped

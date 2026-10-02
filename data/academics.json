@@ -1,0 +1,202 @@
+[
+  {
+    "id": "ACA-001",
+    "question": "How do I register for courses each semester?",
+    "answer": "Log in to the Student Portal at portal.university.edu during the registration window (typically 2 weeks before the semester). Browse the course catalogue, check prerequisites, and add courses to your cart. Submit your selections and confirm. Priority registration dates vary by year of study.",
+    "keywords": ["register", "course", "enrollment", "enroll", "semester", "registration", "sign up", "add course", "subject"],
+    "source_title": "Course Registration Guide",
+    "last_updated": "2026-08"
+  },
+  {
+    "id": "ACA-002",
+    "question": "When is the exam schedule released?",
+    "answer": "The final exam schedule is published at exams.university.edu 6 weeks before the exam period. Mid-term schedules are set by individual departments and communicated by the course instructor. Check your personalised timetable in the Student Portal for your specific exam dates and venues.",
+    "keywords": ["exam", "schedule", "timetable", "finals", "midterm", "mid-term", "exam date", "when exam", "exam time"],
+    "source_title": "Examination Office FAQ",
+    "last_updated": "2026-08"
+  },
+  {
+    "id": "ACA-003",
+    "question": "How do I apply for a re-evaluation or recount of my exam?",
+    "answer": "Submit a re-evaluation request at exams.university.edu/reeval within 10 days of results publication. Pay the re-evaluation fee of $30 per paper. Results are typically available within 15 business days. If the grade changes, the fee is refunded.",
+    "keywords": ["re-evaluation", "recount", "recheck", "remark", "exam result", "grade dispute", "appeal", "recorrection"],
+    "source_title": "Re-evaluation Policy",
+    "last_updated": "2026-07"
+  },
+  {
+    "id": "ACA-004",
+    "question": "How do I check my grades and GPA?",
+    "answer": "View your grades at portal.university.edu under 'Academic Record'. Grades are posted within 2 weeks of the exam period. Your cumulative GPA and semester GPA are calculated automatically. For discrepancies, contact your department office within 5 business days.",
+    "keywords": ["grade", "grades", "gpa", "cgpa", "marks", "result", "results", "transcript", "score", "marksheet"],
+    "source_title": "Academic Records Office",
+    "last_updated": "2026-08"
+  },
+  {
+    "id": "ACA-005",
+    "question": "How do I request an official transcript?",
+    "answer": "Order official transcripts at registrar.university.edu/transcripts. Digital transcripts are $10 and delivered within 2 business days. Hard-copy transcripts are $15 and mailed within 5 business days. Rush processing (24 hours) is available for $25. Transcripts are sealed and sent directly to the recipient.",
+    "keywords": ["transcript", "official transcript", "academic record", "degree", "certificate", "marksheet", "grades history"],
+    "source_title": "Registrar Services",
+    "last_updated": "2026-08"
+  },
+  {
+    "id": "ACA-006",
+    "question": "What is the attendance policy?",
+    "answer": "Students must maintain a minimum of 75% attendance in each course. Attendance below 75% may result in being barred from the final exam. Medical absences with documentation are excused. Check your attendance record on the Student Portal under 'Attendance'.",
+    "keywords": ["attendance", "absent", "absence", "proxy", "minimum attendance", "attendance shortage", "bunk"],
+    "source_title": "Academic Regulations",
+    "last_updated": "2026-06"
+  },
+  {
+    "id": "ACA-007",
+    "question": "How do I drop or withdraw from a course?",
+    "answer": "Drop a course through portal.university.edu during the add/drop period (first 2 weeks of the semester) with no record. After the add/drop period, you can withdraw with a 'W' on your transcript until week 10. After week 10, withdrawal requires the Dean's approval and results in a 'WF' grade.",
+    "keywords": ["drop", "withdraw", "course drop", "withdrawal", "cancel course", "remove course", "unenroll"],
+    "source_title": "Course Withdrawal Policy",
+    "last_updated": "2026-07"
+  },
+  {
+    "id": "ACA-008",
+    "question": "How do I apply for a make-up exam?",
+    "answer": "Apply for a make-up exam at exams.university.edu/makeup within 5 days of the missed exam. Provide supporting documentation (medical certificate, emergency proof). The make-up exam is scheduled within 2 weeks. Only one make-up per course per semester is allowed.",
+    "keywords": ["make-up", "makeup", "missed exam", "supplementary", "reappear", "backlog", "back paper", "re-exam"],
+    "source_title": "Make-up Exam Policy",
+    "last_updated": "2026-08"
+  },
+  {
+    "id": "ACA-009",
+    "question": "What is the academic probation policy?",
+    "answer": "Students with a semester GPA below 2.0 are placed on academic probation. You must achieve a 2.0 GPA the following semester to be removed from probation. Academic advising is mandatory during probation. Two consecutive semesters on probation may result in academic dismissal.",
+    "keywords": ["probation", "academic probation", "low gpa", "failing", "academic standing", "warning", "dismissed"],
+    "source_title": "Academic Standards Policy",
+    "last_updated": "2026-06"
+  },
+  {
+    "id": "ACA-010",
+    "question": "How do I apply for a semester exchange program?",
+    "answer": "Browse exchange opportunities at international.university.edu/exchange. Apply at least one semester in advance. Requirements include a minimum 3.0 GPA, language proficiency (if applicable), and faculty recommendation. Credits earned abroad are transferred based on a pre-approved learning agreement.",
+    "keywords": ["exchange", "semester abroad", "study abroad", "international", "foreign university", "exchange program", "transfer credits"],
+    "source_title": "International Office",
+    "last_updated": "2026-07"
+  },
+  {
+    "id": "ACA-011",
+    "question": "How do I declare or change my major?",
+    "answer": "Submit a major declaration or change form at registrar.university.edu/major. First-year students must declare by the end of their second semester. Changes after the second year require department approval and may extend your graduation timeline. Consult your academic advisor first.",
+    "keywords": ["major", "change major", "declare major", "branch", "specialization", "stream", "department", "switch branch"],
+    "source_title": "Registrar FAQ",
+    "last_updated": "2026-08"
+  },
+  {
+    "id": "ACA-012",
+    "question": "When do classes start and end each semester?",
+    "answer": "The fall semester typically runs from August 15 to December 15. The spring semester runs from January 10 to May 10. Summer sessions are June 1 to July 31. The full academic calendar is published at registrar.university.edu/calendar each year by April.",
+    "keywords": ["semester", "classes", "start date", "end date", "academic calendar", "term", "session", "when start"],
+    "source_title": "Academic Calendar",
+    "last_updated": "2026-08"
+  },
+  {
+    "id": "ACA-013",
+    "question": "How do I contact my academic advisor?",
+    "answer": "Your assigned academic advisor is listed on portal.university.edu under 'My Advisor'. You can book an appointment through the advising portal or email them directly. Walk-in hours are typically Monday-Friday 2-4 PM. First-year students are auto-assigned an advisor at orientation.",
+    "keywords": ["advisor", "adviser", "advising", "guidance", "counselor", "mentor", "academic guidance", "faculty advisor"],
+    "source_title": "Academic Advising Office",
+    "last_updated": "2026-07"
+  },
+  {
+    "id": "ACA-014",
+    "question": "What are the requirements for the Dean's List?",
+    "answer": "To qualify for the Dean's List, you must achieve a semester GPA of 3.7 or above, be enrolled in at least 12 credits, and have no incomplete or failing grades. The list is published each semester at registrar.university.edu/honors. A certificate is sent to qualifying students.",
+    "keywords": ["dean's list", "honors", "honour", "merit", "distinction", "topper", "rank", "academic excellence"],
+    "source_title": "Academic Honors Policy",
+    "last_updated": "2026-06"
+  },
+  {
+    "id": "ACA-015",
+    "question": "How do I submit assignments through the LMS?",
+    "answer": "Navigate to your course page on lms.university.edu, find the assignment under 'Assignments', and upload your file before the deadline. Accepted formats include PDF, DOCX, and ZIP. Late submissions may be penalised per the course syllabus. A confirmation email is sent upon successful submission.",
+    "keywords": ["assignment", "submit", "homework", "upload", "lms", "submission", "due date", "coursework", "project"],
+    "source_title": "LMS Help Guide",
+    "last_updated": "2026-08"
+  },
+  {
+    "id": "ACA-016",
+    "question": "How do I apply for credit transfer from another university?",
+    "answer": "Submit a credit transfer request at registrar.university.edu/transfer with your official transcript and course syllabi from the other institution. The department reviews equivalency within 3 weeks. A maximum of 30 transfer credits can be accepted. Courses must have a grade of C or above.",
+    "keywords": ["credit transfer", "transfer credits", "previous university", "equivalent", "lateral entry", "migration"],
+    "source_title": "Credit Transfer Policy",
+    "last_updated": "2026-07"
+  },
+  {
+    "id": "ACA-017",
+    "question": "What is the policy on academic integrity and plagiarism?",
+    "answer": "All submitted work must be original. Plagiarism, cheating, and fabrication are violations of the Academic Integrity Code. First offences typically result in a zero on the assignment. Repeat offences may lead to course failure or suspension. All work is checked through Turnitin.",
+    "keywords": ["plagiarism", "cheating", "integrity", "academic dishonesty", "copying", "turnitin", "honour code"],
+    "source_title": "Academic Integrity Policy",
+    "last_updated": "2026-06"
+  },
+  {
+    "id": "ACA-018",
+    "question": "How do I apply for graduation?",
+    "answer": "Apply for graduation at registrar.university.edu/graduation at least one semester before your expected completion. Verify that all degree requirements, credits, and GPA thresholds are met. The application fee is $50. Graduation audits are completed within 4 weeks of application.",
+    "keywords": ["graduation", "graduate", "degree", "convocation", "commencement", "passing out", "alumni", "degree completion"],
+    "source_title": "Graduation Office",
+    "last_updated": "2026-08"
+  },
+  {
+    "id": "ACA-019",
+    "question": "How do I request a letter of recommendation from a professor?",
+    "answer": "Email your professor at least 3 weeks before the deadline. Provide your CV, purpose of the letter (grad school, job), and any relevant coursework highlights. Most professors use the department letterhead. Follow up politely if you haven't received confirmation within a week.",
+    "keywords": ["recommendation", "letter", "professor", "reference", "lor", "faculty", "endorsement"],
+    "source_title": "Academic Advising FAQ",
+    "last_updated": "2026-07"
+  },
+  {
+    "id": "ACA-020",
+    "question": "How do I enroll in a minor or elective program?",
+    "answer": "Browse available minors and electives at registrar.university.edu/programs. Apply during the course registration period. Minors require 18-24 credits in the chosen discipline. Elective slots are subject to capacity. Some departments require a minimum GPA for entry into their minor.",
+    "keywords": ["minor", "elective", "open elective", "additional course", "extra subject", "interdisciplinary"],
+    "source_title": "Minors & Electives Guide",
+    "last_updated": "2026-08"
+  },
+  {
+    "id": "ACA-021",
+    "question": "How do I get my backlog or arrear exams cleared?",
+    "answer": "Register for supplementary exams at exams.university.edu/supplementary during the registration window (published each semester). Pay the exam fee of $40 per paper. Supplementary exams are held at the end of each semester. Study materials are available through the course LMS page.",
+    "keywords": ["backlog", "arrear", "supplementary", "reappear", "failed course", "clear backlog", "repeat exam", "kt"],
+    "source_title": "Supplementary Exam Policy",
+    "last_updated": "2026-08"
+  },
+  {
+    "id": "ACA-022",
+    "question": "How do I access past exam papers for practice?",
+    "answer": "Past exam papers are available at library.university.edu/past-papers. Select your department and course code. Papers from the last 5 years are available for download. Some departments also share model answers. Additional practice resources are on the course LMS page.",
+    "keywords": ["past papers", "previous year", "question paper", "old exam", "practice", "sample paper", "model paper", "pyq"],
+    "source_title": "Library Resources",
+    "last_updated": "2026-07"
+  },
+  {
+    "id": "ACA-023",
+    "question": "What is the process for filing a grade appeal?",
+    "answer": "Submit a grade appeal form at registrar.university.edu/appeals within 14 days of grade publication. Include your reasoning and any supporting evidence. The department committee reviews appeals within 3 weeks. You will be notified of the outcome by email. Further appeals go to the Academic Dean.",
+    "keywords": ["grade appeal", "contest grade", "unfair grade", "grade change", "dispute", "complaint grade"],
+    "source_title": "Grade Appeal Process",
+    "last_updated": "2026-07"
+  },
+  {
+    "id": "ACA-024",
+    "question": "How do I find my class schedule and room assignments?",
+    "answer": "Your personal class schedule is available at portal.university.edu under 'My Schedule'. It includes course names, times, room numbers, and instructor names. Room changes are updated in real time. You can also sync your schedule to Google Calendar or Outlook.",
+    "keywords": ["schedule", "class schedule", "room", "timetable", "classroom", "lecture hall", "where class"],
+    "source_title": "Student Portal Guide",
+    "last_updated": "2026-08"
+  },
+  {
+    "id": "ACA-025",
+    "question": "How do I apply for an internship through the university?",
+    "answer": "Visit the Career Services portal at careers.university.edu/internships. Browse opportunities, upload your resume, and apply directly through the portal. The university has partnerships with 200+ companies. Career advisors are available for resume reviews and mock interviews by appointment.",
+    "keywords": ["internship", "placement", "career", "job", "industry", "company", "work experience", "co-op"],
+    "source_title": "Career Services Office",
+    "last_updated": "2026-08"
+  }
+]

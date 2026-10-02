@@ -1,0 +1,202 @@
+[
+  {
+    "id": "ADM-001",
+    "question": "How do I apply for admission to the university?",
+    "answer": "Submit your application at admissions.university.edu. Create an account, fill in personal and academic details, upload required documents (transcripts, ID, photo), and pay the $50 application fee. Applications for fall intake close June 30; spring intake closes November 15.",
+    "keywords": ["apply", "admission", "application", "enroll", "join", "entry", "intake", "apply university"],
+    "source_title": "Admissions Guide",
+    "last_updated": "2026-08"
+  },
+  {
+    "id": "ADM-002",
+    "question": "What documents are required for admission?",
+    "answer": "Required documents include: high school transcripts/marksheets, government-issued photo ID, passport-size photograph, entrance exam scores (if applicable), recommendation letters (2), statement of purpose, and proof of English proficiency (TOEFL/IELTS for international applicants).",
+    "keywords": ["documents", "requirements", "transcript", "marksheet", "id proof", "admission documents", "checklist"],
+    "source_title": "Admissions Checklist",
+    "last_updated": "2026-08"
+  },
+  {
+    "id": "ADM-003",
+    "question": "How do I check my admission application status?",
+    "answer": "Log in to admissions.university.edu/status with your application ID. Your dashboard shows the current status (Under Review, Shortlisted, Accepted, Waitlisted, or Rejected). Email notifications are sent at each stage. Processing typically takes 4-6 weeks after the deadline.",
+    "keywords": ["status", "application status", "track", "check admission", "decision", "accepted", "rejected", "waitlist"],
+    "source_title": "Admissions Portal Help",
+    "last_updated": "2026-08"
+  },
+  {
+    "id": "ADM-004",
+    "question": "What entrance exams are accepted for admission?",
+    "answer": "The university accepts SAT, ACT, JEE Main, CUET, and the university's own entrance test (UET). Minimum score requirements vary by program. Some programs accept portfolio submissions or interviews in lieu of standardised tests. Check program-specific requirements at admissions.university.edu/programs.",
+    "keywords": ["entrance exam", "sat", "act", "jee", "cuet", "test", "exam", "aptitude", "admission test"],
+    "source_title": "Entrance Exam FAQ",
+    "last_updated": "2026-07"
+  },
+  {
+    "id": "ADM-005",
+    "question": "How do I accept my offer of admission?",
+    "answer": "Log in to admissions.university.edu/offer and click 'Accept Offer'. Pay the non-refundable acceptance deposit of $200 within 14 days. You will then receive instructions for course registration, housing application, and orientation sign-up. Failure to accept by the deadline forfeits your seat.",
+    "keywords": ["accept offer", "confirm admission", "acceptance", "seat confirmation", "deposit", "enrollment confirm"],
+    "source_title": "Offer Acceptance Guide",
+    "last_updated": "2026-08"
+  },
+  {
+    "id": "ADM-006",
+    "question": "When is the orientation for new students?",
+    "answer": "New student orientation is held the week before classes start (typically August 8-12 for fall, January 5-8 for spring). Attend in-person sessions on campus life, academic advising, and safety. Register for orientation at orientation.university.edu. Attendance is mandatory for all first-year students.",
+    "keywords": ["orientation", "induction", "welcome", "new student", "freshers", "first day", "onboarding"],
+    "source_title": "Orientation Schedule",
+    "last_updated": "2026-08"
+  },
+  {
+    "id": "ADM-007",
+    "question": "How do I get my student ID card after admission?",
+    "answer": "Your student ID card is issued during orientation at the Campus Card Office (Student Center, Room 105). Bring your admission letter and a government-issued photo ID. If you miss orientation, visit the office during business hours (Mon-Fri 9 AM-4 PM). Temporary digital IDs are available via the campus app.",
+    "keywords": ["student id", "id card", "campus card", "identity", "student card", "photo id"],
+    "source_title": "Campus Card Office",
+    "last_updated": "2026-08"
+  },
+  {
+    "id": "ADM-008",
+    "question": "How do I apply for a student visa (international students)?",
+    "answer": "After accepting your offer, request an I-20 (US) or equivalent visa document at international.university.edu/visa. Processing takes 2-3 weeks. Schedule your visa interview at the nearest embassy with the I-20, admission letter, financial proof, and passport. The International Office provides visa interview prep sessions.",
+    "keywords": ["visa", "international student", "i-20", "immigration", "study permit", "foreign student", "overseas"],
+    "source_title": "International Admissions",
+    "last_updated": "2026-07"
+  },
+  {
+    "id": "ADM-009",
+    "question": "What scholarships are available for incoming students?",
+    "answer": "Merit scholarships (covering 25-100% tuition) are awarded automatically based on entrance exam scores and GPA. Need-based grants require a separate application at finaid.university.edu by March 1. Athletic and talent scholarships require coach/department nomination. Scholarship details are at admissions.university.edu/scholarships.",
+    "keywords": ["scholarship", "merit", "financial aid", "tuition waiver", "grant", "funding", "bursary", "free seat"],
+    "source_title": "Scholarships & Aid",
+    "last_updated": "2026-08"
+  },
+  {
+    "id": "ADM-010",
+    "question": "Can I defer my admission to the next semester?",
+    "answer": "Deferral requests are accepted for up to one academic year. Submit a deferral form at admissions.university.edu/defer within 30 days of your offer. Deferrals are not guaranteed and are subject to program capacity. Scholarships may not be preserved during deferral — check with the Financial Aid office.",
+    "keywords": ["defer", "deferral", "postpone", "delay admission", "gap year", "next semester", "hold admission"],
+    "source_title": "Deferral Policy",
+    "last_updated": "2026-07"
+  },
+  {
+    "id": "ADM-011",
+    "question": "How do I set up my university email and student portal account?",
+    "answer": "After accepting your offer, you receive an activation email within 48 hours. Visit accounts.university.edu/activate, enter your admission ID, set your password, and activate your @university.edu email and Student Portal access. If you don't receive the email, contact admissions@university.edu.",
+    "keywords": ["email setup", "portal access", "activate account", "student account", "login", "first login", "credentials"],
+    "source_title": "IT Onboarding Guide",
+    "last_updated": "2026-08"
+  },
+  {
+    "id": "ADM-012",
+    "question": "What are the age requirements for admission?",
+    "answer": "There is no strict age limit for undergraduate admission. Applicants must have completed secondary education (high school or equivalent). For graduate programs, a bachelor's degree is required. Mature student pathways are available for applicants over 25 without traditional qualifications.",
+    "keywords": ["age", "age limit", "age requirement", "minimum age", "mature student", "eligibility"],
+    "source_title": "Eligibility Criteria",
+    "last_updated": "2026-06"
+  },
+  {
+    "id": "ADM-013",
+    "question": "How do I transfer from another university?",
+    "answer": "Transfer applicants apply through admissions.university.edu/transfer. Submit your current university transcript, course descriptions, and a transfer statement. Credit evaluation takes 3-4 weeks. A maximum of 60 transfer credits are accepted. Minimum GPA of 2.5 at the current institution is required.",
+    "keywords": ["transfer", "lateral entry", "change university", "migration", "transfer student", "switch college"],
+    "source_title": "Transfer Admissions",
+    "last_updated": "2026-07"
+  },
+  {
+    "id": "ADM-014",
+    "question": "How do I register for the university health insurance plan as a new student?",
+    "answer": "All full-time students are automatically enrolled in the university health plan unless a waiver is submitted. To waive, provide proof of comparable coverage at studenthealth.university.edu/waiver before the add/drop deadline. International students cannot waive the university plan.",
+    "keywords": ["health insurance", "medical", "student health", "insurance", "coverage", "waiver", "health plan"],
+    "source_title": "Student Health Services",
+    "last_updated": "2026-08"
+  },
+  {
+    "id": "ADM-015",
+    "question": "What programs and majors does the university offer?",
+    "answer": "The university offers 50+ undergraduate programs across Engineering, Business, Arts & Sciences, Health Sciences, and Law. Graduate programs include 30+ master's and 15+ doctoral programs. Browse the full catalogue at admissions.university.edu/programs with detailed curriculum, career outcomes, and faculty profiles.",
+    "keywords": ["programs", "majors", "courses", "departments", "streams", "branches", "degree", "btech", "bba", "bsc"],
+    "source_title": "Program Catalogue",
+    "last_updated": "2026-08"
+  },
+  {
+    "id": "ADM-016",
+    "question": "How do I register for clubs and student organizations?",
+    "answer": "Browse 100+ clubs at studentlife.university.edu/clubs. Sign up during the Activities Fair in orientation week, or join anytime through the portal. Categories include academic, cultural, sports, tech, and community service. Each club requires a minimum commitment of 2 hours per week.",
+    "keywords": ["clubs", "organizations", "student life", "extracurricular", "activities", "societies", "join club"],
+    "source_title": "Student Life Office",
+    "last_updated": "2026-08"
+  },
+  {
+    "id": "ADM-017",
+    "question": "How do I apply for on-campus employment (work-study)?",
+    "answer": "Search on-campus jobs at careers.university.edu/workstudy. Positions include library assistants, lab technicians, and administrative aides. Students can work up to 20 hours/week during the semester. You must maintain a minimum 2.0 GPA. International students need CPT/OPT authorization.",
+    "keywords": ["work study", "campus job", "student employment", "part time", "job on campus", "student worker"],
+    "source_title": "Student Employment Office",
+    "last_updated": "2026-07"
+  },
+  {
+    "id": "ADM-018",
+    "question": "How do I access counselling and mental health support?",
+    "answer": "The Counselling Center offers free, confidential sessions to all enrolled students. Book at wellness.university.edu or call ext. 2200. Walk-in hours are Mon-Fri 10 AM-4 PM. Crisis support is available 24/7 at ext. 9111. Group therapy sessions and wellness workshops are also available.",
+    "keywords": ["counselling", "counseling", "mental health", "therapy", "wellness", "stress", "support", "psychologist"],
+    "source_title": "Counselling Center",
+    "last_updated": "2026-08"
+  },
+  {
+    "id": "ADM-019",
+    "question": "What is the process for changing my personal details (name, address)?",
+    "answer": "Update personal information at registrar.university.edu/profile. Name changes require legal documentation (court order, marriage certificate). Address and phone updates take effect immediately. Email changes require IT approval. Allow 5 business days for name changes to propagate across all university systems.",
+    "keywords": ["change name", "update details", "personal info", "address change", "profile update", "records"],
+    "source_title": "Registrar Services",
+    "last_updated": "2026-07"
+  },
+  {
+    "id": "ADM-020",
+    "question": "How do I request a bonafide or enrollment verification letter?",
+    "answer": "Request enrollment verification at registrar.university.edu/verification. Standard letters are issued within 2 business days. Specify the purpose (visa, bank, employer) and recipient details. Digital copies are emailed; hard copies can be collected from the Registrar's Office or mailed.",
+    "keywords": ["bonafide", "enrollment verification", "enrollment letter", "verification", "proof of enrollment", "certificate"],
+    "source_title": "Registrar FAQ",
+    "last_updated": "2026-08"
+  },
+  {
+    "id": "ADM-021",
+    "question": "How do I report a lost or stolen item on campus?",
+    "answer": "Report lost items at security.university.edu/lostandfound or visit the Security Office in the Admin Building. Provide a description, last known location, and your contact details. Found items are held for 30 days. You can also check the digital lost-and-found board on the campus app.",
+    "keywords": ["lost", "stolen", "found", "missing", "lost and found", "lost item", "misplaced"],
+    "source_title": "Campus Security FAQ",
+    "last_updated": "2026-07"
+  },
+  {
+    "id": "ADM-022",
+    "question": "How do I get a medical leave of absence?",
+    "answer": "Apply for medical leave at registrar.university.edu/leave. Submit a medical certificate from a licensed physician. Medical leave can be for one semester or a full academic year. Tuition is refunded pro-rata based on the withdrawal date. You must reapply for readmission when returning.",
+    "keywords": ["medical leave", "leave of absence", "health leave", "sick leave", "withdrawal medical", "break from studies"],
+    "source_title": "Leave of Absence Policy",
+    "last_updated": "2026-07"
+  },
+  {
+    "id": "ADM-023",
+    "question": "What support is available for students with disabilities?",
+    "answer": "The Disability Services Office at disability.university.edu provides accommodations including extended exam time, note-taking services, accessible materials, and assistive technology. Register with documentation from a qualified professional. Accommodations are reviewed each semester.",
+    "keywords": ["disability", "accommodation", "accessibility", "special needs", "learning disability", "disabled", "inclusive"],
+    "source_title": "Disability Services Office",
+    "last_updated": "2026-08"
+  },
+  {
+    "id": "ADM-024",
+    "question": "How do I access the campus Wi-Fi as a new student?",
+    "answer": "Connect to 'CampusSecure' using your university email and password once your account is activated. New students receive setup instructions during orientation. If you have trouble connecting, visit the IT Help Desk in the Library, Level 1, or call ext. 1234.",
+    "keywords": ["new student wifi setup", "first time network", "new student campus network", "onboarding network", "activate network access"],
+    "source_title": "IT Quick Start Guide",
+    "last_updated": "2026-08"
+  },
+  {
+    "id": "ADM-025",
+    "question": "How do I apply for readmission after a break?",
+    "answer": "Submit a readmission application at admissions.university.edu/readmission at least 8 weeks before the semester starts. Include a personal statement explaining your break and readiness to return. Previous academic standing is reviewed. A readmission fee of $75 applies. Credit validity depends on time elapsed.",
+    "keywords": ["readmission", "re-enroll", "return", "rejoin", "come back", "reapply", "readmit"],
+    "source_title": "Readmission Policy",
+    "last_updated": "2026-07"
+  }
+]

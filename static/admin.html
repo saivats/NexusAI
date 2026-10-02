@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NexusAI — Admin Dashboard</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+    :root {
+      --bg: #0a0a0f; --bg2: #12121a; --bg3: #1a1a2e; --card: rgba(255,255,255,0.03);
+      --border: rgba(255,255,255,0.06); --text: #e8e8f0; --text2: #8888a0; --muted: #55556a;
+      --blue: #4f8cff; --purple: #a855f7; --green: #34d399; --amber: #f59e0b;
+      --red: #ef4444; --cyan: #22d3ee; --pink: #ec4899;
+      --grad: linear-gradient(135deg, #4f8cff, #a855f7, #ec4899);
+      --radius: 12px; --transition: 0.2s cubic-bezier(0.4,0,0.2,1);
+    }
+    body { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--text); min-height: 100vh; }
+
+    .admin-header {
+      padding: 20px 32px; border-bottom: 1px solid var(--border); background: var(--bg2);
+      display: flex; align-items: center; gap: 16px;
+    }
+    .admin-header h1 { font-size: 20px; font-weight: 700; background: var(--grad); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    .admin-header a { color: var(--blue); text-decoration: none; font-size: 13px; margin-left: auto; }
+    .admin-header a:hover { text-decoration: underline; }
+
+    .admin-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 20px; padding: 24px 32px; }
+
+    .card {
+      background: var(--card); border: 1px solid var(--border); border-radius: var(--radius);
+      padding: 20px; transition: var(--transition);
+    }
+    .card:hover { border-color: rgba(255,255,255,0.1); }
+    .card-title { font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--muted); margin-bottom: 16px; }
+
+    .stat-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 12px; }
+    .stat-item { text-align: center; }
+    .stat-num { font-size: 28px; font-weight: 800; }
+    .stat-label { font-size: 10px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.08em; margin-top: 4px; }
+    .stat-num.green { color: var(--green); }
+    .stat-num.amber { color: var(--amber); }
+    .stat-num.red { color: var(--red); }
+    .stat-num.purple { color: var(--purple); }
+
+    .bar-chart { display: flex; flex-direction: column; gap: 8px; }
+    .bar-row { display: flex; align-items: center; gap: 10px; }
+    .bar-label { width: 80px; font-size: 11px; color: var(--text2); font-weight: 500; }
+    .bar-track { flex: 1; height: 8px; background: rgba(255,255,255,0.04); border-radius: 4px; overflow: hidden; }
+    .bar-fill { height: 100%; border-radius: 4px; transition: width 0.6s ease; }
+    .bar-count { font-size: 11px; color: var(--muted); font-weight: 600; min-width: 30px; text-align: right; }
+
+    .table-wrap { overflow-x: auto; }
+    table { width: 100%; border-collapse: collapse; font-size: 12px; }
+    th { text-align: left; padding: 8px 12px; color: var(--muted); font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; border-bottom: 1px solid var(--border); font-size: 10px; }
+    td { padding: 8px 12px; border-bottom: 1px solid rgba(255,255,255,0.03); color: var(--text2); }
+    tr:hover td { background: rgba(255,255,255,0.02); }
+
+    .status-badge { padding: 2px 8px; border-radius: 10px; font-size: 10px; font-weight: 600; text-transform: uppercase; }
+    .status-badge.open { background: rgba(245,158,11,0.12); color: var(--amber); }
+    .status-badge.closed { background: rgba(52,211,153,0.12); color: var(--green); }
+
+    .gap-item { padding: 8px 0; border-bottom: 1px solid rgba(255,255,255,0.03); font-size: 12px; color: var(--text2); }
+    .gap-item:last-child { border: none; }
+    .gap-count { float: right; color: var(--muted); font-weight: 600; }
+
+    .actions-bar { padding: 16px 32px; display: flex; gap: 12px; flex-wrap: wrap; }
+    .action-btn {
+      padding: 8px 18px; border-radius: 20px; border: 1px solid var(--border);
+      background: var(--card); color: var(--text); font-size: 12px; font-weight: 500;
+      cursor: pointer; font-family: inherit; transition: var(--transition);
+    }
+    .action-btn:hover { border-color: var(--blue); color: var(--blue); }
+    .action-btn.primary { background: linear-gradient(135deg, #4f8cff, #6366f1); border: none; color: #fff; }
+
+    .confusion-grid { display: grid; gap: 2px; font-size: 10px; text-align: center; }
+    .confusion-cell { padding: 6px 4px; border-radius: 4px; }
+    .confusion-header { font-weight: 600; color: var(--muted); }
+  </style>
+</head>
+<body>
+  <div class="admin-header">
+    <h1>📋 NexusAI Admin Dashboard</h1>
+    <a href="/" aria-label="Back to chat">← Back to Chat</a>
+  </div>
+
+  <div class="actions-bar">
+    <button class="action-btn primary" id="btn-reload" aria-label="Reload knowledge base">🔄 Reload KB</button>
+    <button class="action-btn" id="btn-export" aria-label="Export logs as CSV">📥 Export CSV</button>
+    <button class="action-btn" id="btn-refresh" aria-label="Refresh dashboard">🔃 Refresh</button>
+  </div>
+
+  <div class="admin-grid" id="admin-grid">
+    <div class="card">
+      <div class="card-title">📊 Routing Overview</div>
+      <div class="stat-grid" id="stats-grid"></div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">📈 Questions by Domain</div>
+      <div class="bar-chart" id="domain-chart"></div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">🎫 Recent Tickets</div>
+      <div class="table-wrap"><table><thead><tr><th>Ticket ID</th><th>Query</th><th>Domain</th><th>Status</th></tr></thead><tbody id="tickets-body"></tbody></table></div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">❓ Top Unanswered Queries (Knowledge Gaps)</div>
+      <div id="gaps-list"></div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">👎 Lowest-Rated FAQs</div>
+      <div class="table-wrap"><table><thead><tr><th>FAQ ID</th><th>Avg Rating</th><th>Votes</th></tr></thead><tbody id="rated-body"></tbody></table></div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">💡 Suggested FAQ Additions</div>
+      <div id="suggestions-list"><p style="font-size:12px;color:var(--muted);">Based on handoff queries grouped by theme. Reload after accumulating data.</p></div>
+    </div>
+  </div>
+
+  <script>
+    const DOMAIN_COLORS = { it:"#4f8cff", hr:"#a855f7", finance:"#34d399", facilities:"#f59e0b", academics:"#22d3ee", admissions:"#ec4899" };
+    const DOMAIN_LABELS = { it:"IT", hr:"HR", finance:"Finance", facilities:"Facilities", academics:"Academics", admissions:"Admissions" };
+
+    async function loadDashboard() {
+      try {
+        const [statsRes, ticketsRes] = await Promise.all([
+          fetch("/admin/stats").then(r => r.json()),
+          fetch("/tickets").then(r => r.json()),
+        ]);
+
+        const m = statsRes.metrics || {};
+        document.getElementById("stats-grid").innerHTML = `
+          <div class="stat-item"><div class="stat-num green">${m.answered||0}</div><div class="stat-label">Answered</div></div>
+          <div class="stat-item"><div class="stat-num amber">${m.clarified||0}</div><div class="stat-label">Clarified</div></div>
+          <div class="stat-item"><div class="stat-num red">${m.handed_off||0}</div><div class="stat-label">Handed Off</div></div>
+          <div class="stat-item"><div class="stat-num purple">${m.sensitive||0}</div><div class="stat-label">Sensitive</div></div>
+        `;
+
+        const dist = statsRes.domain_distribution || {};
+        const maxC = Math.max(...Object.values(dist), 1);
+        document.getElementById("domain-chart").innerHTML = Object.entries(dist).map(([d,c]) => {
+          const pct = Math.round((c/maxC)*100);
+          const color = DOMAIN_COLORS[d]||"#888";
+          return `<div class="bar-row"><span class="bar-label">${DOMAIN_LABELS[d]||d}</span><div class="bar-track"><div class="bar-fill" style="width:${pct}%;background:${color}"></div></div><span class="bar-count">${c}</span></div>`;
+        }).join("") || '<p style="font-size:12px;color:var(--muted)">No data yet</p>';
+
+        const tickets = ticketsRes.tickets || [];
+        document.getElementById("tickets-body").innerHTML = tickets.slice(0,15).map(t => `
+          <tr><td style="font-family:monospace;color:var(--amber)">${t.id}</td><td>${(t.query||"").substring(0,40)}</td><td>${t.domain_guess||"—"}</td><td><span class="status-badge ${t.status}">${t.status}</span></td></tr>
+        `).join("") || '<tr><td colspan="4" style="color:var(--muted)">No tickets</td></tr>';
+
+        const gaps = statsRes.handoff_queries || [];
+        document.getElementById("gaps-list").innerHTML = gaps.slice(0,10).map(g => `
+          <div class="gap-item">${(g.query||"").substring(0,60)} <span class="gap-count">×${g.count}</span></div>
+        `).join("") || '<p style="font-size:12px;color:var(--muted)">No unanswered queries yet</p>';
+
+        const rated = statsRes.lowest_rated_faqs || [];
+        document.getElementById("rated-body").innerHTML = rated.slice(0,10).map(r => `
+          <tr><td style="font-family:monospace">${r.faq_id}</td><td>${(r.avg_rating||0).toFixed(1)}</td><td>${r.count}</td></tr>
+        `).join("") || '<tr><td colspan="3" style="color:var(--muted)">No feedback yet</td></tr>';
+
+        if (gaps.length > 0) {
+          const themes = {};
+          gaps.forEach(g => {
+            const words = (g.query||"").toLowerCase().split(/\s+/).filter(w => w.length > 3);
+            words.forEach(w => { themes[w] = (themes[w]||0) + g.count; });
+          });
+          const sorted = Object.entries(themes).sort((a,b) => b[1]-a[1]).slice(0,5);
+          if (sorted.length > 0) {
+            document.getElementById("suggestions-list").innerHTML = sorted.map(([w,c]) => `
+              <div class="gap-item">Consider adding FAQ about: <strong style="color:var(--cyan)">"${w}"</strong> <span class="gap-count">${c} queries</span></div>
+            `).join("");
+          }
+        }
+      } catch (e) {
+        console.error("Dashboard load error:", e);
+      }
+    }
+
+    document.getElementById("btn-reload").addEventListener("click", async () => {
+      const btn = document.getElementById("btn-reload");
+      btn.disabled = true; btn.textContent = "⏳ Reloading...";
+      try { await fetch("/admin/reload-kb", { method: "POST" }); btn.textContent = "✅ Reloaded!"; }
+      catch(_) { btn.textContent = "❌ Failed"; }
+      setTimeout(() => { btn.textContent = "🔄 Reload KB"; btn.disabled = false; }, 2000);
+    });
+
+    document.getElementById("btn-export").addEventListener("click", () => {
+      window.location.href = "/admin/export-csv";
+    });
+
+    document.getElementById("btn-refresh").addEventListener("click", loadDashboard);
+
+    loadDashboard();
+  </script>
+</body>
+</html>

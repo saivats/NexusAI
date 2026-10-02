@@ -3,90 +3,120 @@
     "id": "FIN-001",
     "question": "When is the tuition fee payment deadline?",
     "answer": "Tuition fees are due by September 15 for the fall semester and January 15 for the spring semester. Late payments incur a $50 penalty per week. Payment plans are available through the Finance Office if applied for before the deadline.",
-    "keywords": ["tuition", "fee", "deadline", "payment", "due date", "semester", "pay fees"]
+    "keywords": ["tuition", "fee", "deadline", "payment", "due date", "semester", "pay fees"],
+    "source_title": "Tuition Payment Schedule",
+    "last_updated": "2026-08"
   },
   {
     "id": "FIN-002",
     "question": "How do I apply for a tuition fee refund?",
     "answer": "Submit a refund request at finance.university.edu/refunds within 4 weeks of the semester start. Full refunds are available in week 1, 75% in week 2, 50% in week 3, and 25% in week 4. No refunds after week 4. Processing takes 10-15 business days to your original payment method.",
-    "keywords": ["refund", "fee refund", "money back", "reimbursement", "withdraw", "drop course"]
+    "keywords": ["refund", "fee refund", "money back", "reimbursement", "withdraw", "drop course"],
+    "source_title": "Refund Policy",
+    "last_updated": "2026-08"
   },
   {
     "id": "FIN-003",
     "question": "How do I set up a tuition payment plan?",
     "answer": "Apply for a payment plan at finance.university.edu/plans before the fee deadline. Plans split tuition into 4 equal monthly installments with a $25 setup fee. Automatic payments from a linked bank account or credit card are required. Missed installments void the plan.",
-    "keywords": ["payment plan", "installment", "monthly payment", "pay over time", "financial plan"]
+    "keywords": ["payment plan", "installment", "monthly payment", "pay over time", "financial plan"],
+    "source_title": "Payment Plan Guide",
+    "last_updated": "2026-07"
   },
   {
     "id": "FIN-004",
     "question": "How do I check my student account balance?",
     "answer": "Log in to finance.university.edu/account to view your current balance, pending charges, financial aid credits, and payment history. Balances update in real time. You can set up email alerts for new charges and low-balance warnings under 'Notification Preferences'.",
-    "keywords": ["balance", "account", "charges", "statement", "outstanding", "owe", "bill"]
+    "keywords": ["balance", "account", "charges", "statement", "outstanding", "owe", "bill"],
+    "source_title": "Student Account FAQ",
+    "last_updated": "2026-08"
   },
   {
     "id": "FIN-005",
     "question": "How do I apply for financial aid or scholarships?",
     "answer": "Submit the university financial aid application at finaid.university.edu by March 1 for the following academic year. Required documents include tax returns, income statements, and the FAFSA confirmation. Merit scholarships are automatic based on GPA. Need-based awards are notified by June 1.",
-    "keywords": ["financial aid", "scholarship", "grant", "bursary", "funding", "assistance", "fafsa"]
+    "keywords": ["financial aid", "scholarship", "grant", "bursary", "funding", "assistance", "fafsa"],
+    "source_title": "Financial Aid Guide",
+    "last_updated": "2026-08"
   },
   {
     "id": "FIN-006",
     "question": "How do I pay my tuition fees online?",
     "answer": "Go to finance.university.edu/pay and log in with your student ID. Select 'Make a Payment', choose the charges to pay, and complete payment via credit card, debit card, or bank transfer. A confirmation receipt is emailed within 5 minutes. International students can use Flywire for currency conversion.",
-    "keywords": ["pay", "online", "credit card", "payment", "transfer", "pay tuition", "pay fees"]
+    "keywords": ["pay", "online", "credit card", "payment", "transfer", "pay tuition", "pay fees"],
+    "source_title": "Online Payment Guide",
+    "last_updated": "2026-08"
   },
   {
     "id": "FIN-007",
     "question": "How do I get a tax receipt for tuition fees (T2202/1098-T)?",
     "answer": "Tax receipts are available at finance.university.edu/tax by February 28 each year. Download your T2202 (Canada) or 1098-T (US) form. Ensure your mailing address is current in your student profile. For corrections, email finance@university.edu with your student ID.",
-    "keywords": ["tax", "receipt", "t2202", "1098", "tax form", "deduction", "tax credit"]
+    "keywords": ["tax", "receipt", "t2202", "1098", "tax form", "deduction", "tax credit"],
+    "source_title": "Tax Documentation Guide",
+    "last_updated": "2026-08"
   },
   {
     "id": "FIN-008",
     "question": "What happens if I don't pay my tuition fees on time?",
     "answer": "Late tuition payments incur a $50 weekly penalty. After 4 weeks, a registration hold is placed on your account, preventing enrollment in future courses. After 8 weeks, the account is sent to collections. Contact finance@university.edu immediately if you're facing difficulty.",
-    "keywords": ["late payment", "penalty", "overdue", "delinquent", "hold", "collections", "unpaid"]
+    "keywords": ["late payment", "penalty", "overdue", "delinquent", "hold", "collections", "unpaid"],
+    "source_title": "Late Payment Policy",
+    "last_updated": "2026-07"
   },
   {
     "id": "FIN-009",
     "question": "How do I request a fee waiver for student activities?",
     "answer": "Fee waiver applications for student activity fees are accepted at finance.university.edu/waivers. Eligible criteria include financial hardship, documented disability, or part-time enrollment below 9 credits. Submit supporting documents by the add/drop deadline.",
-    "keywords": ["fee waiver", "waiver", "exempt", "activity fee", "reduce fees"]
+    "keywords": ["fee waiver", "waiver", "exempt", "activity fee", "reduce fees"],
+    "source_title": "Fee Waiver FAQ",
+    "last_updated": "2026-07"
   },
   {
     "id": "FIN-010",
     "question": "How do I understand my tuition bill breakdown?",
     "answer": "Your tuition bill at finance.university.edu/account shows itemized charges: base tuition, student services fee, technology fee, health plan fee, and any course-specific lab fees. Click each line item for a description. Questions about specific charges can be directed to finance@university.edu.",
-    "keywords": ["bill", "breakdown", "itemized", "charges", "tuition breakdown", "fees explained"]
+    "keywords": ["bill", "breakdown", "itemized", "charges", "tuition breakdown", "fees explained"],
+    "source_title": "Billing FAQ",
+    "last_updated": "2026-08"
   },
   {
     "id": "FIN-011",
     "question": "How do I transfer funds for international tuition payment?",
     "answer": "International students should use the Flywire payment platform linked from finance.university.edu/international. Flywire offers competitive exchange rates and tracks your payment end-to-end. Wire transfers to the university bank account are also accepted; details are on the payment page.",
-    "keywords": ["international", "transfer", "wire", "flywire", "foreign", "currency", "overseas payment"]
+    "keywords": ["international", "transfer", "wire", "flywire", "foreign", "currency", "overseas payment"],
+    "source_title": "International Payments Guide",
+    "last_updated": "2026-07"
   },
   {
     "id": "FIN-012",
     "question": "How do I apply for an emergency student loan?",
     "answer": "Emergency short-term loans up to $1,500 are available at finance.university.edu/emergency-loan. Loans are interest-free if repaid within 90 days. You must be a registered student in good academic standing. Approval takes 2 business days and funds are deposited directly.",
-    "keywords": ["emergency loan", "short-term loan", "borrow", "financial emergency", "urgent funds"]
+    "keywords": ["emergency loan", "short-term loan", "borrow", "financial emergency", "urgent funds"],
+    "source_title": "Emergency Loan FAQ",
+    "last_updated": "2026-07"
   },
   {
     "id": "FIN-013",
     "question": "How do I get a receipt for a payment I've already made?",
     "answer": "View and download payment receipts at finance.university.edu/account under 'Payment History'. Each transaction has a downloadable PDF receipt. For official stamped receipts, visit the Finance Office in the Administration Building, Room 102, during business hours.",
-    "keywords": ["receipt", "proof of payment", "confirmation", "transaction", "payment receipt"]
+    "keywords": ["receipt", "proof of payment", "confirmation", "transaction", "payment receipt"],
+    "source_title": "Payment Records FAQ",
+    "last_updated": "2026-07"
   },
   {
     "id": "FIN-014",
     "question": "How are graduate assistant tuition benefits calculated?",
     "answer": "Graduate assistants (0.5 FTE or above) receive a full tuition waiver for up to 12 credits per semester. Additional credits are charged at the standard per-credit rate. The waiver is applied automatically after your GA appointment is confirmed in the HR system.",
-    "keywords": ["graduate assistant", "tuition waiver", "ga", "teaching assistant", "ta", "benefit", "assistantship"]
+    "keywords": ["graduate assistant", "tuition waiver", "ga", "teaching assistant", "ta", "benefit", "assistantship"],
+    "source_title": "GA Benefits Guide",
+    "last_updated": "2026-08"
   },
   {
     "id": "FIN-015",
     "question": "How do I sponsor a third-party payment for my tuition?",
     "answer": "Submit a third-party sponsorship letter from your sponsor to finance@university.edu before the fee deadline. The letter must include your name, student ID, the amount covered, and the sponsor's billing contact. A third-party account is created and invoiced directly to the sponsor.",
-    "keywords": ["sponsor", "third-party", "employer payment", "sponsorship", "company paying", "organization"]
+    "keywords": ["sponsor", "third-party", "employer payment", "sponsorship", "company paying", "organization"],
+    "source_title": "Third-Party Payment Guide",
+    "last_updated": "2026-07"
   }
 ]

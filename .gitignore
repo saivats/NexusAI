@@ -12,3 +12,8 @@ venv/
 .vscode/
 *.swp
 *.swo
+nexusai.db
+tests/results.json
+tests/report.md
+tests/confusion_matrix.png
+.agents/
