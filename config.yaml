@@ -1,84 +1,84 @@
 domains:
-  - it
-  - hr
-  - finance
-  - facilities
-  - academics
-  - admissions
-
+- it
+- hr
+- finance
+- facilities
+- academics
+- admissions
 routing:
   t_high: 0.42
   t_low: 0.15
-  margin: 0.08
+  margin: 0.02
+  cal_answer: 0.55
+  cal_low: 0.52
   tfidf_weight: 0.35
   keyword_weight: 0.25
-  classifier_weight: 0.40
-
+  classifier_weight: 0.4
+  calibration:
+    coef_score: 7.8598
+    coef_margin: 7.0531
+    intercept: -0.9363
 retrieval:
   top_k: 3
   bm25_weight: 0.45
   tfidf_weight: 0.55
-
 session:
   max_turns: 5
   message_max_length: 500
   rate_limit_per_minute: 30
-
 sensitive_keywords:
-  - being harassed
-  - harassed by
-  - harassment
-  - harassed
-  - abuse
-  - abused
-  - abusing
-  - assault
-  - assaulted
-  - unsafe
-  - feel unsafe
-  - don't feel safe
-  - suicide
-  - suicidal
-  - self-harm
-  - self harm
-  - mental health crisis
-  - discrimination
-  - discriminated
-  - discriminating
-  - bullying
-  - bullied
-  - stalking
-  - stalked
-  - violence
-  - violent
-  - threat
-  - threatened
-  - ragging
-  - ragged
-  - molest
-  - molested
-  - depressed
-  - depression
-  - i want to die
-
+- being harassed
+- harassed by
+- harassment
+- harassed
+- abuse
+- abused
+- abusing
+- assault
+- assaulted
+- unsafe
+- feel unsafe
+- don't feel safe
+- suicide
+- suicidal
+- self-harm
+- self harm
+- mental health crisis
+- discrimination
+- discriminated
+- discriminating
+- bullying
+- bullied
+- stalking
+- stalked
+- violence
+- violent
+- threat
+- threatened
+- ragging
+- ragged
+- molest
+- molested
+- depressed
+- depression
+- i want to die
 sensitive_contact:
-  email: "welfare@university.edu"
-  phone: "ext. 1100"
-  message: >
-    I understand this may be a difficult situation. Your wellbeing matters, and
-    this is being treated with the highest priority and confidentiality.
-    Please reach out to our Welfare & Support team — they are trained professionals
-    who can help. A human counsellor will respond promptly.
+  email: welfare@university.edu
+  phone: ext. 1100
+  message: 'I understand this may be a difficult situation. Your wellbeing matters,
+    and this is being treated with the highest priority and confidentiality. Please
+    reach out to our Welfare & Support team — they are trained professionals who can
+    help. A human counsellor will respond promptly.
 
+    '
 azure:
   timeout_seconds: 4
-  env_flag: "USE_AZURE_OPENAI"
-  endpoint_var: "AZURE_OPENAI_ENDPOINT"
-  key_var: "AZURE_OPENAI_KEY"
-  deployment_var: "AZURE_OPENAI_DEPLOYMENT"
-
+  env_flag: USE_AZURE_OPENAI
+  endpoint_var: AZURE_OPENAI_ENDPOINT
+  key_var: AZURE_OPENAI_KEY
+  deployment_var: AZURE_OPENAI_DEPLOYMENT
 server:
-  host: "0.0.0.0"
+  host: 0.0.0.0
   port: 8000
   cors_origins:
-    - "*"
+  - '*'

@@ -3,7 +3,7 @@
     "id": "FAC-001",
     "question": "How do I report a maintenance issue in my hostel room?",
     "answer": "Submit a maintenance request at facilities.university.edu/maintenance. Select your building and room number, describe the issue (plumbing, electrical, furniture, etc.), and upload a photo if possible. Non-urgent requests are addressed within 3 business days. For emergencies (flooding, power outage), call ext. 5555.",
-    "keywords": ["maintenance", "repair", "fix", "broken", "hostel", "dorm", "room", "issue", "problem"],
+    "keywords": ["maintenance", "repair", "fix", "broken", "hostel", "dorm", "room", "issue", "problem", "water cooler", "cooler kharab", "fan not working", "light not working", "kharab", "leaking tap", "ac not working"],
     "source_title": "Maintenance Request Guide",
     "last_updated": "2026-08"
   },
@@ -43,7 +43,7 @@
     "id": "FAC-006",
     "question": "How do I access the gym and recreation facilities?",
     "answer": "All registered students have free access to the Recreation Center with their student ID card. Hours are Monday-Friday 6:00 AM to 10:00 PM, weekends 8:00 AM to 8:00 PM. Locker rentals are $30/semester. Group fitness classes require online sign-up at recreation.university.edu.",
-    "keywords": ["gym", "recreation", "fitness", "exercise", "sports", "workout", "recreation center"],
+    "keywords": ["gym", "recreation", "fitness", "exercise", "sports", "workout", "recreation center", "swimming pool", "pool timings", "pool", "sports complex", "badminton court"],
     "source_title": "Recreation Center Guide",
     "last_updated": "2026-08"
   },
@@ -51,7 +51,7 @@
     "id": "FAC-007",
     "question": "How do I report a safety or security concern on campus?",
     "answer": "For emergencies, call Campus Security at ext. 9111. For non-emergencies, submit a report at security.university.edu/report or use the campus safety app. Blue light emergency phones are located every 200 meters across campus. Security patrols operate 24/7.",
-    "keywords": ["safety", "security", "emergency", "concern", "report", "incident", "danger", "threat"],
+    "keywords": ["safety", "security", "emergency", "concern", "report", "incident", "danger", "threat", "security number", "campus security", "security guard", "security contact", "guard"],
     "source_title": "Campus Security FAQ",
     "last_updated": "2026-08"
   },
@@ -59,7 +59,7 @@
     "id": "FAC-008",
     "question": "How do I apply for campus housing (hostel accommodation)?",
     "answer": "Apply for housing at housing.university.edu by May 1 for the fall semester. Select your room preference (single, double, suite). Priority is given to first-year students and those with accessibility needs. Room assignments are posted by July 15. A $500 housing deposit is required.",
-    "keywords": ["housing", "hostel", "accommodation", "dorm", "dormitory", "residence", "room assignment", "living"],
+    "keywords": ["housing", "hostel", "accommodation", "dorm", "dormitory", "residence", "room assignment", "living", "room allotment", "hostel allotment", "room allot", "laundry", "hostel facilities"],
     "source_title": "Housing Application Guide",
     "last_updated": "2026-08"
   },
@@ -67,7 +67,7 @@
     "id": "FAC-009",
     "question": "How do I request extra cleaning in a shared space?",
     "answer": "Submit a cleaning request at facilities.university.edu/cleaning for common areas, kitchens, or bathrooms. Specify the building, floor, and area. Routine cleaning is daily for high-traffic areas. Special requests (post-event cleanup, deep cleaning) require 48 hours notice.",
-    "keywords": ["cleaning", "clean", "housekeeping", "janitorial", "sanitation", "dirty", "mess"],
+    "keywords": ["cleaning", "clean", "housekeeping", "janitorial", "sanitation", "dirty", "mess", "washroom", "toilet", "bathroom", "saaf nahi", "not clean", "unclean", "smelly"],
     "source_title": "Cleaning Services FAQ",
     "last_updated": "2026-07"
   },
@@ -91,7 +91,7 @@
     "id": "FAC-012",
     "question": "How do I report a pest control issue?",
     "answer": "Submit a pest control request at facilities.university.edu/maintenance and select 'Pest Control' as the category. Specify the type of pest if known and the location. Pest control services respond within 24 hours for urgent cases (rodents, bed bugs) and 3 days for routine cases.",
-    "keywords": ["pest", "bug", "insect", "rodent", "mice", "rat", "cockroach", "exterminator"],
+    "keywords": ["pest", "bug", "insect", "rodent", "mice", "rat", "cockroach", "exterminator", "cockroaches", "bugs in room", "mosquito", "termites"],
     "source_title": "Pest Control FAQ",
     "last_updated": "2026-07"
   },
@@ -107,7 +107,7 @@
     "id": "FAC-014",
     "question": "How do I get furniture repaired or replaced in my hostel?",
     "answer": "Submit a furniture request at facilities.university.edu/maintenance under 'Furniture'. Common items (desk chairs, bed frames, wardrobes) are replaced within 5 business days if damaged through normal wear. Damage from misuse may be charged to your housing account after inspection.",
-    "keywords": ["furniture", "desk", "chair", "bed", "wardrobe", "replace", "broken furniture"],
+    "keywords": ["furniture", "desk", "chair", "bed", "wardrobe", "replace", "broken furniture", "room furniture", "furniture broken", "broken bed", "broken chair", "cupboard"],
     "source_title": "Furniture Services FAQ",
     "last_updated": "2026-07"
   },

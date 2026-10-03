@@ -3,7 +3,7 @@
     "id": "HR-001",
     "question": "How do I apply for annual leave?",
     "answer": "Log in to the HR portal at hr.university.edu, navigate to 'Leave Management', and select 'Apply for Leave'. Choose 'Annual Leave', select dates, and submit. Your line manager will receive an approval notification. Allow 2 business days for processing.",
-    "keywords": ["annual", "leave", "vacation", "holiday", "time off", "pto", "days off"],
+    "keywords": ["annual", "leave", "vacation", "holiday", "time off", "pto", "days off", "time off work", "apply leave", "leave apply", "take leave", "chutti chahiye"],
     "source_title": "Leave Management Guide",
     "last_updated": "2026-08"
   },
@@ -19,7 +19,7 @@
     "id": "HR-003",
     "question": "What is the policy for sick leave?",
     "answer": "Staff are entitled to 12 days of paid sick leave per academic year. Sick leave exceeding 3 consecutive days requires a medical certificate uploaded to the HR portal. Unused sick leave does not carry over. For extended illness, contact HR for long-term disability options.",
-    "keywords": ["sick", "leave", "illness", "medical", "health", "unwell", "doctor"],
+    "keywords": ["sick", "leave", "illness", "medical", "health", "unwell", "doctor", "sick leave", "sick days", "how many sick", "bimaari", "beemar", "medical certificate", "medical leave"],
     "source_title": "Sick Leave Policy",
     "last_updated": "2026-07"
   },
@@ -59,7 +59,7 @@
     "id": "HR-008",
     "question": "How do I enroll in the staff health insurance plan?",
     "answer": "Visit hr.university.edu/benefits during the open enrollment period (November 1-30). Compare plan options, select your coverage tier (individual, couple, family), and designate beneficiaries. New hires have 30 days from their start date to enroll. Changes take effect the following month.",
-    "keywords": ["health", "insurance", "medical", "benefits", "coverage", "dental", "vision", "enrollment"],
+    "keywords": ["health", "insurance", "medical", "benefits", "coverage", "dental", "vision", "enrollment", "staff health insurance", "employee insurance", "health insurance enroll", "insurance enroll"],
     "source_title": "Benefits Enrollment Guide",
     "last_updated": "2026-08"
   },
@@ -107,7 +107,7 @@
     "id": "HR-014",
     "question": "What are the university public holidays?",
     "answer": "The university observes 12 public holidays annually, including New Year's Day, Independence Day, Thanksgiving, and a winter break (Dec 24-Jan 1). The complete holiday calendar is published at hr.university.edu/calendar each August. Department-specific closures may apply.",
-    "keywords": ["holidays", "public holidays", "day off", "closure", "break", "calendar"],
+    "keywords": ["holidays", "public holidays", "day off", "closure", "break", "calendar", "gazetted holidays", "holiday list", "holidays list", "public holiday list"],
     "source_title": "Holiday Calendar",
     "last_updated": "2026-08"
   },

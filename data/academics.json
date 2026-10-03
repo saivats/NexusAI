@@ -11,7 +11,7 @@
     "id": "ACA-002",
     "question": "When is the exam schedule released?",
     "answer": "The final exam schedule is published at exams.university.edu 6 weeks before the exam period. Mid-term schedules are set by individual departments and communicated by the course instructor. Check your personalised timetable in the Student Portal for your specific exam dates and venues.",
-    "keywords": ["exam", "schedule", "timetable", "finals", "midterm", "mid-term", "exam date", "when exam", "exam time"],
+    "keywords": ["exam", "schedule", "timetable", "finals", "midterm", "mid-term", "exam date", "when exam", "exam time", "hall ticket", "admit card", "exam hall ticket", "pariksha", "pareeksha", "exam kab", "exam kab hai", "exam kab hoga"],
     "source_title": "Examination Office FAQ",
     "last_updated": "2026-08"
   },
@@ -91,7 +91,7 @@
     "id": "ACA-012",
     "question": "When do classes start and end each semester?",
     "answer": "The fall semester typically runs from August 15 to December 15. The spring semester runs from January 10 to May 10. Summer sessions are June 1 to July 31. The full academic calendar is published at registrar.university.edu/calendar each year by April.",
-    "keywords": ["semester", "classes", "start date", "end date", "academic calendar", "term", "session", "when start"],
+    "keywords": ["semester", "classes", "start date", "end date", "academic calendar", "term", "session", "when start", "class start", "classes start", "sem start", "semester start", "next sem", "kab se class"],
     "source_title": "Academic Calendar",
     "last_updated": "2026-08"
   },
@@ -139,7 +139,7 @@
     "id": "ACA-018",
     "question": "How do I apply for graduation?",
     "answer": "Apply for graduation at registrar.university.edu/graduation at least one semester before your expected completion. Verify that all degree requirements, credits, and GPA thresholds are met. The application fee is $50. Graduation audits are completed within 4 weeks of application.",
-    "keywords": ["graduation", "graduate", "degree", "convocation", "commencement", "passing out", "alumni", "degree completion"],
+    "keywords": ["graduation", "graduate", "degree", "convocation", "commencement", "passing out", "alumni", "degree completion", "convocation date", "convocation kab", "degree ceremony"],
     "source_title": "Graduation Office",
     "last_updated": "2026-08"
   },
@@ -155,7 +155,7 @@
     "id": "ACA-020",
     "question": "How do I enroll in a minor or elective program?",
     "answer": "Browse available minors and electives at registrar.university.edu/programs. Apply during the course registration period. Minors require 18-24 credits in the chosen discipline. Elective slots are subject to capacity. Some departments require a minimum GPA for entry into their minor.",
-    "keywords": ["minor", "elective", "open elective", "additional course", "extra subject", "interdisciplinary"],
+    "keywords": ["minor", "elective", "open elective", "additional course", "extra subject", "interdisciplinary", "choose elective", "elective subject", "select elective", "elective choose"],
     "source_title": "Minors & Electives Guide",
     "last_updated": "2026-08"
   },

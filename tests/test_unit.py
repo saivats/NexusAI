@@ -141,6 +141,60 @@ class TestRouter:
         assert "academics" in scores
         assert "admissions" in scores
 
+    def test_internet_slow_hostel_routes_to_it(self):
+        from app.router import get_router
+        router = get_router()
+        result = router.route("internet is slow in hostel")
+        assert result["top_domain"] == "it"
+
+    def test_sick_leaves_routes_to_hr(self):
+        from app.router import get_router
+        router = get_router()
+        result = router.route("how many sick leaves do i get")
+        assert result["top_domain"] == "hr"
+
+    def test_refund_routes_to_finance(self):
+        from app.router import get_router
+        router = get_router()
+        result = router.route("can i get a refund")
+        assert result["top_domain"] == "finance"
+
+    def test_hall_ticket_routes_to_academics(self):
+        from app.router import get_router
+        router = get_router()
+        result = router.route("exam hall ticket kab milega")
+        assert result["top_domain"] == "academics"
+
+    def test_calibrated_confidence_drives_action(self):
+        from app.router import get_router
+        router = get_router()
+        result = router.route("How do I connect to campus WiFi?")
+        assert result["calibrated_confidence"] >= 0.55
+        assert result["action"] == "answer"
+
+    def test_calibration_monotonic(self):
+        from app.router import get_router
+        router = get_router()
+        assert router.calibrate_confidence(0.5, 0.2) > router.calibrate_confidence(0.2, 0.2)
+        assert router.calibrate_confidence(0.4, 0.3) > router.calibrate_confidence(0.4, 0.0)
+
+
+KNOWN_FAILURES = [
+    ("hey why is wifi not working", "it"),
+    ("internet is slow in hostel", "it"),
+    ("how many sick leaves do i get", "hr"),
+    ("can i get a refund", "finance"),
+    ("exam hall ticket kab milega", "academics"),
+]
+
+
+@pytest.mark.parametrize("query,expected_domain", KNOWN_FAILURES)
+def test_known_failures_answered_directly(query, expected_domain):
+    from app.router import get_router
+    result = get_router().route(query)
+    assert result["top_domain"] == expected_domain
+    assert result["action"] == "answer"
+
 
 class TestRetrieval:
     def test_retrieve_returns_result(self):

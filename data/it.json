@@ -11,7 +11,7 @@
     "id": "IT-002",
     "question": "How do I reset my university password?",
     "answer": "Visit identity.university.edu/reset, enter your student or staff ID, and follow the email verification link. Passwords must be at least 12 characters with a mix of uppercase, lowercase, numbers, and symbols. Resets take effect within 5 minutes.",
-    "keywords": ["password", "reset", "forgot", "change", "login", "credentials", "locked", "locked out", "cant login", "sign in", "log in"],
+    "keywords": ["password", "reset", "forgot", "change", "login", "credentials", "locked", "locked out", "cant login", "sign in", "log in", "account not letting me in", "cant log in", "login failed", "login problem", "login nahi ho raha", "account locked", "unable to login"],
     "source_title": "Account Management FAQ",
     "last_updated": "2026-08"
   },
@@ -19,7 +19,7 @@
     "id": "IT-003",
     "question": "How do I connect to campus WiFi?",
     "answer": "Select the 'CampusSecure' network from your device WiFi settings. Use your university email as the username and your campus password. If prompted for a certificate, accept the university root CA. Eduroam is also available for inter-university visitors.",
-    "keywords": ["wifi", "wi-fi", "wireless", "internet", "connect", "eduroam", "campus network", "network", "connection", "not working", "slow", "cant connect", "no internet", "disconnected", "signal", "hotspot"],
+    "keywords": ["wifi", "wi-fi", "wireless", "internet", "connect", "eduroam", "campus network", "network", "connection", "not working", "slow", "cant connect", "no internet", "disconnected", "signal", "hotspot", "wifi nahi chal raha", "net nahi aa raha", "wifi issue", "wifi problem", "internet down", "internet slow", "net slow", "net nahi chal raha", "net bohot slow", "wifi slow", "hostel wifi", "hostel net"],
     "source_title": "Campus WiFi Guide",
     "last_updated": "2026-08"
   },
@@ -35,7 +35,7 @@
     "id": "IT-005",
     "question": "How do I access the learning management system (LMS)?",
     "answer": "Navigate to lms.university.edu and log in with your campus credentials. Courses are auto-enrolled based on your registration. If a course is missing, contact your department coordinator to verify your enrollment record.",
-    "keywords": ["lms", "canvas", "moodle", "learning", "courses", "online", "classroom", "blackboard"],
+    "keywords": ["lms", "canvas", "moodle", "learning", "courses", "online", "classroom", "blackboard", "lms not opening", "lms nahi khul raha", "lms open nahi", "lms down", "cant access lms"],
     "source_title": "LMS Access Guide",
     "last_updated": "2026-08"
   },
@@ -43,7 +43,7 @@
     "id": "IT-006",
     "question": "How do I request software for my university computer?",
     "answer": "Submit a software request through the IT Service Portal at servicedesk.university.edu/software. Include the software name, version, license type, and business justification. Standard requests are fulfilled within 3 business days.",
-    "keywords": ["software", "install", "application", "license", "request", "program", "download"],
+    "keywords": ["software", "install", "application", "license", "request", "program", "download", "install software", "software install", "lab computer software", "lab pc software", "install on lab"],
     "source_title": "Software Request Portal",
     "last_updated": "2026-07"
   },
@@ -107,7 +107,7 @@
     "id": "IT-014",
     "question": "How do I check my internet usage quota?",
     "answer": "Log in to netportal.university.edu with your campus credentials. Your dashboard shows current usage, remaining quota, and billing cycle. Residential students have a 100GB monthly cap; academic usage on campus is unlimited.",
-    "keywords": ["internet", "usage", "quota", "bandwidth", "data", "limit", "cap"],
+    "keywords": ["internet", "usage", "quota", "bandwidth", "data", "limit", "cap", "slow internet", "slow network", "internet slow hostel", "hostel internet", "laggy", "buffering", "speed"],
     "source_title": "Network Usage FAQ",
     "last_updated": "2026-08"
   },
@@ -115,7 +115,7 @@
     "id": "IT-015",
     "question": "How do I submit an IT support ticket?",
     "answer": "Visit servicedesk.university.edu and click 'New Ticket'. Select the appropriate category, describe your issue in detail, and attach screenshots if relevant. You'll receive a confirmation email with a ticket number. Priority issues can also call the helpdesk at ext. 1234.",
-    "keywords": ["support", "ticket", "help", "issue", "problem", "helpdesk", "service desk", "it support"],
+    "keywords": ["support", "ticket", "help", "issue", "problem", "helpdesk", "service desk", "it support", "it complaint", "file a complaint with it", "raise ticket", "it helpdesk", "tech support", "complaint it"],
     "source_title": "IT Service Desk Guide",
     "last_updated": "2026-08"
   }

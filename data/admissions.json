@@ -3,7 +3,7 @@
     "id": "ADM-001",
     "question": "How do I apply for admission to the university?",
     "answer": "Submit your application at admissions.university.edu. Create an account, fill in personal and academic details, upload required documents (transcripts, ID, photo), and pay the $50 application fee. Applications for fall intake close June 30; spring intake closes November 15.",
-    "keywords": ["apply", "admission", "application", "enroll", "join", "entry", "intake", "apply university"],
+    "keywords": ["apply", "admission", "application", "enroll", "join", "entry", "intake", "apply university", "get into the university", "how to get in", "join university", "admission kaise", "admission process"],
     "source_title": "Admissions Guide",
     "last_updated": "2026-08"
   },
@@ -27,7 +27,7 @@
     "id": "ADM-004",
     "question": "What entrance exams are accepted for admission?",
     "answer": "The university accepts SAT, ACT, JEE Main, CUET, and the university's own entrance test (UET). Minimum score requirements vary by program. Some programs accept portfolio submissions or interviews in lieu of standardised tests. Check program-specific requirements at admissions.university.edu/programs.",
-    "keywords": ["entrance exam", "sat", "act", "jee", "cuet", "test", "exam", "aptitude", "admission test"],
+    "keywords": ["entrance exam", "sat", "act", "jee", "cuet", "test", "exam", "aptitude", "admission test", "entrance exam result", "entrance result", "entrance test", "entrance"],
     "source_title": "Entrance Exam FAQ",
     "last_updated": "2026-07"
   },
@@ -115,7 +115,7 @@
     "id": "ADM-015",
     "question": "What programs and majors does the university offer?",
     "answer": "The university offers 50+ undergraduate programs across Engineering, Business, Arts & Sciences, Health Sciences, and Law. Graduate programs include 30+ master's and 15+ doctoral programs. Browse the full catalogue at admissions.university.edu/programs with detailed curriculum, career outcomes, and faculty profiles.",
-    "keywords": ["programs", "majors", "courses", "departments", "streams", "branches", "degree", "btech", "bba", "bsc"],
+    "keywords": ["programs", "majors", "courses", "departments", "streams", "branches", "degree", "btech", "bba", "bsc", "courses available", "courses offered", "kya courses", "which courses", "programs offered"],
     "source_title": "Program Catalogue",
     "last_updated": "2026-08"
   },
@@ -123,7 +123,7 @@
     "id": "ADM-016",
     "question": "How do I register for clubs and student organizations?",
     "answer": "Browse 100+ clubs at studentlife.university.edu/clubs. Sign up during the Activities Fair in orientation week, or join anytime through the portal. Categories include academic, cultural, sports, tech, and community service. Each club requires a minimum commitment of 2 hours per week.",
-    "keywords": ["clubs", "organizations", "student life", "extracurricular", "activities", "societies", "join club"],
+    "keywords": ["clubs", "organizations", "student life", "extracurricular", "activities", "societies", "join club", "alumni network", "alumni association", "join alumni"],
     "source_title": "Student Life Office",
     "last_updated": "2026-08"
   },
@@ -195,7 +195,7 @@
     "id": "ADM-025",
     "question": "How do I apply for readmission after a break?",
     "answer": "Submit a readmission application at admissions.university.edu/readmission at least 8 weeks before the semester starts. Include a personal statement explaining your break and readiness to return. Previous academic standing is reviewed. A readmission fee of $75 applies. Credit validity depends on time elapsed.",
-    "keywords": ["readmission", "re-enroll", "return", "rejoin", "come back", "reapply", "readmit"],
+    "keywords": ["readmission", "re-enroll", "return", "rejoin", "come back", "reapply", "readmit", "readmission after gap", "rejoin after break", "readmission lena"],
     "source_title": "Readmission Policy",
     "last_updated": "2026-07"
   }

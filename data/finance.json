@@ -11,7 +11,7 @@
     "id": "FIN-002",
     "question": "How do I apply for a tuition fee refund?",
     "answer": "Submit a refund request at finance.university.edu/refunds within 4 weeks of the semester start. Full refunds are available in week 1, 75% in week 2, 50% in week 3, and 25% in week 4. No refunds after week 4. Processing takes 10-15 business days to your original payment method.",
-    "keywords": ["refund", "fee refund", "money back", "reimbursement", "withdraw", "drop course"],
+    "keywords": ["refund", "fee refund", "money back", "reimbursement", "withdraw", "drop course", "get refund", "can i get refund", "paise wapas", "return fee", "tuition refund"],
     "source_title": "Refund Policy",
     "last_updated": "2026-08"
   },
@@ -19,7 +19,7 @@
     "id": "FIN-003",
     "question": "How do I set up a tuition payment plan?",
     "answer": "Apply for a payment plan at finance.university.edu/plans before the fee deadline. Plans split tuition into 4 equal monthly installments with a $25 setup fee. Automatic payments from a linked bank account or credit card are required. Missed installments void the plan.",
-    "keywords": ["payment plan", "installment", "monthly payment", "pay over time", "financial plan"],
+    "keywords": ["payment plan", "installment", "monthly payment", "pay over time", "financial plan", "pay in parts", "fees in parts", "pay in installments", "kisht", "partial payment"],
     "source_title": "Payment Plan Guide",
     "last_updated": "2026-07"
   },
@@ -27,7 +27,7 @@
     "id": "FIN-004",
     "question": "How do I check my student account balance?",
     "answer": "Log in to finance.university.edu/account to view your current balance, pending charges, financial aid credits, and payment history. Balances update in real time. You can set up email alerts for new charges and low-balance warnings under 'Notification Preferences'.",
-    "keywords": ["balance", "account", "charges", "statement", "outstanding", "owe", "bill"],
+    "keywords": ["balance", "account", "charges", "statement", "outstanding", "owe", "bill", "due dikh raha", "account due", "pending dues", "dues", "how much do i owe"],
     "source_title": "Student Account FAQ",
     "last_updated": "2026-08"
   },
@@ -59,7 +59,7 @@
     "id": "FIN-008",
     "question": "What happens if I don't pay my tuition fees on time?",
     "answer": "Late tuition payments incur a $50 weekly penalty. After 4 weeks, a registration hold is placed on your account, preventing enrollment in future courses. After 8 weeks, the account is sent to collections. Contact finance@university.edu immediately if you're facing difficulty.",
-    "keywords": ["late payment", "penalty", "overdue", "delinquent", "hold", "collections", "unpaid"],
+    "keywords": ["late payment", "penalty", "overdue", "delinquent", "hold", "collections", "unpaid", "owe money", "unpaid fees", "fees not paid", "missed payment", "late fee"],
     "source_title": "Late Payment Policy",
     "last_updated": "2026-07"
   },

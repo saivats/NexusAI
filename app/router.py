@@ -84,6 +84,12 @@ class DomainRouter:
         self._t_high = routing_config.get("t_high", 0.42)
         self._t_low = routing_config.get("t_low", 0.15)
         self._margin = routing_config.get("margin", 0.08)
+        self._cal_answer = routing_config.get("cal_answer", 0.55)
+        self._cal_low = routing_config.get("cal_low", 0.20)
+        calibration_config = routing_config.get("calibration", {})
+        self._cal_coef_score = calibration_config.get("coef_score", 9.0)
+        self._cal_coef_margin = calibration_config.get("coef_margin", 6.0)
+        self._cal_intercept = calibration_config.get("intercept", -2.2)
         self._tfidf_weight = routing_config.get("tfidf_weight", 0.35)
         self._keyword_weight = routing_config.get("keyword_weight", 0.25)
         self._classifier_weight = routing_config.get("classifier_weight", 0.40)
@@ -192,10 +198,15 @@ class DomainRouter:
 
         return scores
 
-    def calibrate_confidence(self, raw_score):
-        calibrated = min(raw_score * 2.2 + 0.05, 1.0)
-        calibrated = max(calibrated, 0.0)
-        return round(calibrated, 4)
+    def calibrate_confidence(self, raw_score, margin=0.0):
+        logit = self._cal_intercept + self._cal_coef_score * raw_score + self._cal_coef_margin * margin
+        logit = max(min(logit, 30.0), -30.0)
+        return round(1.0 / (1.0 + math.exp(-logit)), 4)
+
+    def set_calibration(self, coef_score, coef_margin, intercept):
+        self._cal_coef_score = coef_score
+        self._cal_coef_margin = coef_margin
+        self._cal_intercept = intercept
 
     def confidence_label(self, calibrated_score):
         if calibrated_score >= 0.70:
@@ -225,20 +236,16 @@ class DomainRouter:
         top_domain, top_score = sorted_domains[0]
         second_domain, second_score = sorted_domains[1] if len(sorted_domains) > 1 else ("unknown", 0.0)
 
-        calibrated = self.calibrate_confidence(top_score)
-        label = self.confidence_label(calibrated)
         margin = top_score - second_score
+        calibrated = self.calibrate_confidence(top_score, margin)
+        label = self.confidence_label(calibrated)
 
-        if top_score < self._t_low:
+        if calibrated < self._cal_low:
             action = "handoff"
-        elif top_score >= self._t_high and margin >= self._margin:
+        elif calibrated >= self._cal_answer and margin >= self._margin:
             action = "answer"
-        elif margin < self._margin and top_score >= self._t_low:
-            action = "clarify"
-        elif top_score >= self._t_low and top_score < self._t_high:
-            action = "clarify"
         else:
-            action = "answer"
+            action = "clarify"
 
         return {
             "top_domain": top_domain,
@@ -251,10 +258,18 @@ class DomainRouter:
             "all_scores": scores,
         }
 
-    def update_thresholds(self, t_high, t_low, margin):
-        self._t_high = t_high
-        self._t_low = t_low
-        self._margin = margin
+    def update_thresholds(self, t_high=None, t_low=None, margin=None,
+                          cal_answer=None, cal_low=None):
+        if t_high is not None:
+            self._t_high = t_high
+        if t_low is not None:
+            self._t_low = t_low
+        if margin is not None:
+            self._margin = margin
+        if cal_answer is not None:
+            self._cal_answer = cal_answer
+        if cal_low is not None:
+            self._cal_low = cal_low
 
 
 _router_instance = None
