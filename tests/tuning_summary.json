@@ -1,0 +1,78 @@
+{
+  "split": "train (stratified, seed=42)",
+  "records": 147,
+  "cross_fit_folds_for_out_of_scope": 4,
+  "selected": {
+    "other_threshold": 0.3,
+    "sim_floor": 0.02,
+    "answer_floor": 0.0,
+    "margin": 0.04,
+    "pair_margin": 0.08,
+    "cal_low": 0.0
+  },
+  "train_metrics": {
+    "handoff_recall": 100.0,
+    "direct_rate": 92.8,
+    "wrong_answer_rate": 0.7,
+    "false_handoff_rate": 3.7,
+    "clarify_rate": 3.0
+  },
+  "tradeoff_other_threshold": [
+    {
+      "other_threshold": 0.3,
+      "handoff_recall": 100.0,
+      "direct_rate": 92.8,
+      "wrong_answer_rate": 0.7,
+      "false_handoff_rate": 3.7,
+      "clarify_rate": 3.0
+    },
+    {
+      "other_threshold": 0.4,
+      "handoff_recall": 75.0,
+      "direct_rate": 93.6,
+      "wrong_answer_rate": 0.7,
+      "false_handoff_rate": 1.5,
+      "clarify_rate": 4.4
+    },
+    {
+      "other_threshold": 0.5,
+      "handoff_recall": 75.0,
+      "direct_rate": 94.4,
+      "wrong_answer_rate": 0.7,
+      "false_handoff_rate": 0.0,
+      "clarify_rate": 5.2
+    },
+    {
+      "other_threshold": 0.6,
+      "handoff_recall": 75.0,
+      "direct_rate": 94.4,
+      "wrong_answer_rate": 0.7,
+      "false_handoff_rate": 0.0,
+      "clarify_rate": 5.2
+    },
+    {
+      "other_threshold": 0.7,
+      "handoff_recall": 75.0,
+      "direct_rate": 94.4,
+      "wrong_answer_rate": 0.7,
+      "false_handoff_rate": 0.0,
+      "clarify_rate": 5.2
+    },
+    {
+      "other_threshold": 0.8,
+      "handoff_recall": 75.0,
+      "direct_rate": 94.4,
+      "wrong_answer_rate": 0.7,
+      "false_handoff_rate": 0.0,
+      "clarify_rate": 5.2
+    },
+    {
+      "other_threshold": 1.01,
+      "handoff_recall": 75.0,
+      "direct_rate": 94.4,
+      "wrong_answer_rate": 0.7,
+      "false_handoff_rate": 0.0,
+      "clarify_rate": 5.2
+    }
+  ]
+}

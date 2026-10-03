@@ -281,7 +281,8 @@ def chat(request: ChatRequest, req: Request):
         route_result = router.route(part_text)
         action = route_result["action"]
 
-        if context_domain and action in ("handoff", "clarify"):
+        is_out_of_domain = route_result.get("out_of_domain", False)
+        if context_domain and action in ("handoff", "clarify") and not is_out_of_domain:
             route_result["top_domain"] = context_domain
             route_result["action"] = "answer"
             action = "answer"

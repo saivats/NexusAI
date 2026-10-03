@@ -196,6 +196,81 @@ def test_known_failures_answered_directly(query, expected_domain):
     assert result["action"] == "answer"
 
 
+OUT_OF_DOMAIN_QUERIES = [
+    "what's the weather going to be like in noida tomorrow",
+    "is it raining outside right now",
+    "hiii",
+    "good afternoon",
+    "kjhsdf poiuy mnbvc",
+    "qqqq wwww eeee",
+    "who is the richest person in the world",
+    "recommend me a sci-fi movie to watch tonight",
+]
+
+
+@pytest.mark.parametrize("query", OUT_OF_DOMAIN_QUERIES)
+def test_out_of_domain_hands_off(query):
+    from app.router import get_router
+    result = get_router().route(query)
+    assert result["action"] == "handoff"
+    assert result["out_of_domain"] is True
+
+
+def _features(top, second, margin, top_score=0.4, calibrated=0.9):
+    from app.decision import RoutingFeatures
+    return RoutingFeatures(
+        top_domain=top, second_domain=second, top_score=top_score, margin=margin,
+        calibrated=calibrated, max_similarity=0.3, other_probability=0.01,
+    )
+
+
+OVERLAP_PAIRS = [
+    ("finance", "facilities"),
+    ("facilities", "finance"),
+    ("finance", "academics"),
+    ("hr", "it"),
+    ("it", "hr"),
+    ("admissions", "academics"),
+]
+
+
+@pytest.mark.parametrize("top,second", OVERLAP_PAIRS)
+def test_overlapping_pair_close_call_clarifies(top, second):
+    from app.decision import DecisionThresholds, decide
+    thresholds = DecisionThresholds(margin=0.04, pair_margin=0.08)
+    action, reason = decide(_features(top, second, margin=0.06), thresholds)
+    assert action == "clarify"
+    assert reason == "close_overlapping_pair"
+
+
+def test_non_overlapping_pair_same_margin_answers():
+    from app.decision import DecisionThresholds, decide
+    thresholds = DecisionThresholds(margin=0.04, pair_margin=0.08, answer_floor=0.1)
+    action, _ = decide(_features("it", "facilities", margin=0.06), thresholds)
+    assert action == "answer"
+
+
+def test_answer_requires_raw_score_floor_even_with_large_margin():
+    from app.decision import DecisionThresholds, decide
+    thresholds = DecisionThresholds(margin=0.04, answer_floor=0.2)
+    action, reason = decide(_features("it", "facilities", margin=0.3, top_score=0.15), thresholds)
+    assert action == "clarify"
+    assert reason == "weak_raw_score"
+
+
+def test_other_class_probability_forces_handoff():
+    from app.decision import DecisionThresholds, RoutingFeatures, decide
+    features = RoutingFeatures("it", "hr", 0.5, 0.3, 0.95, 0.3, 0.9)
+    action, reason = decide(features, DecisionThresholds(other_threshold=0.5))
+    assert action == "handoff"
+    assert reason == "out_of_domain_classifier"
+
+
+def test_router_uses_configured_overlap_guard():
+    from app.router import get_router
+    assert frozenset(("hr", "it")) in get_router().thresholds.overlap_pairs
+
+
 class TestRetrieval:
     def test_retrieve_returns_result(self):
         from app.retrieval import get_retriever

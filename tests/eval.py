@@ -16,6 +16,9 @@ from app.retrieval import get_retriever
 QUERIES_PATH = Path(__file__).resolve().parent / "queries.json"
 RESULTS_PATH = Path(__file__).resolve().parent / "results.json"
 REPORT_PATH = Path(__file__).resolve().parent.parent / "docs" / "results.md"
+TUNING_SUMMARY_PATH = Path(__file__).resolve().parent / "tuning_summary.json"
+FRESH_PATH = Path(__file__).resolve().parent / "fresh_eval.json"
+PHASE0_BASELINE = {"handoff_accuracy": 75.0, "direct_answer_rate": 90.5}
 SPLIT_PATTERN = re.compile(
     r"\band\s+also\b|\balso\b|\bplus\b|\band\b|[;]|[,]\s*(?:and\b|also\b|plus\b|\d+[.)])|"
     r"[,](?=\s+(?:how|what|when|where|why|can|do|is|are|i\s))|\?\s*|(?:^|\n)\s*\d+[.)]\s*",
@@ -102,6 +105,9 @@ def evaluate(queries, label=""):
 
     simple_answered_directly = 0
     simple_total = 0
+    in_domain_wrong_answers = 0
+    in_domain_handoffs = 0
+    in_domain_total = 0
 
     confusion = defaultdict(lambda: defaultdict(int))
     type_stats = defaultdict(lambda: {"correct": 0, "total": 0})
@@ -199,6 +205,12 @@ def evaluate(queries, label=""):
             if domain_correct and route["action"] == "answer":
                 simple_answered_directly += 1
 
+        in_domain_total += 1
+        if route["action"] == "answer" and not domain_correct:
+            in_domain_wrong_answers += 1
+        if route["action"] == "handoff":
+            in_domain_handoffs += 1
+
         faq_correct = False
         if domain_correct and route["action"] in ("answer", "clarify"):
             result = retriever.retrieve(query, predicted_domain)
@@ -228,6 +240,8 @@ def evaluate(queries, label=""):
     sensitive_recall = sensitive_correct / sensitive_total * 100 if sensitive_total else 0
     clarify_precision = clarify_correct / clarify_total * 100 if clarify_total else 0
     direct_answer_rate = simple_answered_directly / simple_total * 100 if simple_total else 0
+    wrong_answer_rate = in_domain_wrong_answers / in_domain_total * 100 if in_domain_total else 0
+    false_handoff_rate = in_domain_handoffs / in_domain_total * 100 if in_domain_total else 0
 
     p50 = sorted(latencies)[len(latencies) // 2] if latencies else 0
     p95 = sorted(latencies)[int(len(latencies) * 0.95)] if latencies else 0
@@ -253,6 +267,8 @@ def evaluate(queries, label=""):
     print(f"  Handoff Accuracy:       {handoff_correct}/{handoff_total} = {handoff_acc:.1f}%")
     print(f"  Sensitive Recall:       {sensitive_correct}/{sensitive_total} = {sensitive_recall:.1f}%")
     print(f"  Clarify Precision:      {clarify_correct}/{clarify_total} = {clarify_precision:.1f}%")
+    print(f"  Wrong-Domain Answers:   {in_domain_wrong_answers}/{in_domain_total} = {wrong_answer_rate:.1f}% (in-domain answered by the wrong domain)")
+    print(f"  False Handoffs:         {in_domain_handoffs}/{in_domain_total} = {false_handoff_rate:.1f}% (in-domain handed off)")
     print(f"  Macro-F1:               {macro_f1:.3f}")
     print(f"  p50 Latency:            {p50:.1f}ms")
     print(f"  p95 Latency:            {p95:.1f}ms")
@@ -308,6 +324,10 @@ def evaluate(queries, label=""):
         "handoff_accuracy": round(handoff_acc, 1),
         "sensitive_recall": round(sensitive_recall, 1),
         "clarify_precision": round(clarify_precision, 1),
+        "wrong_answer_rate": round(wrong_answer_rate, 1),
+        "false_handoff_rate": round(false_handoff_rate, 1),
+        "handoff_support": handoff_total,
+        "simple_support": simple_total,
         "macro_f1": round(macro_f1, 3),
         "p50_latency_ms": round(p50, 1),
         "p95_latency_ms": round(p95, 1),
@@ -366,57 +386,134 @@ def write_results(results):
     print(f"\nResults saved to {RESULTS_PATH}")
 
 
-def write_report(results):
-    lines = [
-        "# NexusAI Evaluation Report\n",
-        f"**Dataset:** {results.get('label', 'held-out test set')}",
-        f"**Total Queries:** {results['total_queries']}",
-        f"**Split:** Stratified shuffled 60/40, seed 42\n",
+def _summary_section(results):
+    return [
         "## Summary\n",
         "| Metric | Value |",
         "|---|---|",
         f"| Routing Accuracy | {results['routing_accuracy']}% |",
         f"| Resolution Rate | {results['resolution_rate']}% |",
-        f"| Direct Answer Rate | {results['direct_answer_rate']}% |",
-        f"| Handoff Accuracy | {results['handoff_accuracy']}% |",
+        f"| Direct Answer Rate (simple, n={results.get('simple_support', 0)}) | {results['direct_answer_rate']}% |",
+        f"| Out-of-Scope Handoff Recall (n={results.get('handoff_support', 0)}) | {results['handoff_accuracy']}% |",
+        f"| Wrong-Domain Answer Rate (in-domain) | {results.get('wrong_answer_rate', 0)}% |",
+        f"| False Handoff Rate (in-domain) | {results.get('false_handoff_rate', 0)}% |",
         f"| Sensitive Recall | {results['sensitive_recall']}% |",
         f"| Clarify Precision | {results['clarify_precision']}% |",
         f"| Macro-F1 | {results['macro_f1']} |",
         f"| p50 Latency | {results['p50_latency_ms']}ms |",
         f"| p95 Latency | {results['p95_latency_ms']}ms |",
         "",
-        "## Per-Domain F1 (with support counts)\n",
-        "| Domain | F1 | Support |",
-        "|---|---|---|",
     ]
-    for d, f1 in results.get("per_domain_f1", {}).items():
-        support = results.get("per_domain_support", {}).get(d, 0)
-        lines.append(f"| {d} | {f1} | {support} |")
 
-    lines.extend([
-        "",
-        "## Per-Type Breakdown\n",
-        "| Type | Correct | Total | Accuracy |",
-        "|---|---|---|---|",
-    ])
+
+def _per_domain_section(results):
+    lines = ["## Per-Domain F1 (with support counts)\n", "| Domain | F1 | Support |", "|---|---|---|"]
+    for d, f1 in results.get("per_domain_f1", {}).items():
+        lines.append(f"| {d} | {f1} | {results.get('per_domain_support', {}).get(d, 0)} |")
+    return lines + [""]
+
+
+def _per_type_section(results):
+    lines = ["## Per-Type Breakdown\n", "| Type | Correct | Total | Accuracy |", "|---|---|---|---|"]
     for t, s in sorted(results.get("per_type", {}).items()):
         acc = s["correct"] / s["total"] * 100 if s["total"] else 0
         lines.append(f"| {t} | {s['correct']} | {s['total']} | {acc:.1f}% |")
+    return lines + [""]
 
-    lines.extend([
+
+def _load_tuning_summary():
+    if not TUNING_SUMMARY_PATH.exists():
+        return None
+    with open(TUNING_SUMMARY_PATH, "r", encoding="utf-8") as f:
+        return json.load(f)
+
+
+def _tradeoff_section(results):
+    lines = [
+        "## Out-of-Domain Trade-off\n",
+        "Held-out operating point compared with the Phase 0 router (same split, same queries):\n",
+        "| Router | Out-of-Scope Handoff Recall | Direct Answer Rate |",
+        "|---|---|---|",
+        f"| Phase 0 (no out-of-domain gate) | {PHASE0_BASELINE['handoff_accuracy']}% | {PHASE0_BASELINE['direct_answer_rate']}% |",
+        f"| Phase 1A (out-of-domain gate) | {results['handoff_accuracy']}% | {results['direct_answer_rate']}% |",
         "",
+    ]
+    summary = _load_tuning_summary()
+    if not summary:
+        return lines
+    lines.extend([
+        f"Train-split sweep of `other_threshold` (other thresholds fixed at the selected values; "
+        f"out-of-scope features cross-fitted over {summary.get('cross_fit_folds_for_out_of_scope')} folds):\n",
+        "| other_threshold | Handoff Recall | Direct Answer | Wrong-Domain Answer | False Handoff | Clarify |",
+        "|---|---|---|---|---|---|",
+    ])
+    for row in summary.get("tradeoff_other_threshold", []):
+        lines.append(
+            f"| {row['other_threshold']} | {row['handoff_recall']}% | {row['direct_rate']}% | "
+            f"{row['wrong_answer_rate']}% | {row['false_handoff_rate']}% | {row['clarify_rate']}% |"
+        )
+    selected = ", ".join(f"`{k}={v}`" for k, v in summary.get("selected", {}).items())
+    lines.extend(["", f"Selected on train: {selected}", ""])
+    return lines
+
+
+def _methodology_section():
+    return [
         "## Methodology\n",
         "- Split: stratified by query type and expected domain, shuffled with seed 42 (60% train / 40% held-out).",
-        "- Calibration (logistic fit on top score and top-2 margin) and thresholds (`margin`, `cal_low`) are fitted by `tests/tune.py` on the train split only.",
-        "- `cal_answer` is fixed at 0.55; the router answers when calibrated confidence >= 0.55 and the top-2 margin >= `margin`.",
-        "- Direct Answer Rate = share of simple held-out queries routed to the correct domain with action `answer` (not `clarify`).",
+        "- `tests/tune.py` fits the calibration and every decision threshold on the train split only.",
+        "- Out-of-domain gate: a classifier `other` class trained on generic non-campus text plus train-split out-of-scope queries, "
+        "a word-level similarity floor (`sim_floor`), and an `answer_floor` on the raw score.",
+        "- Overlapping pairs (finance/facilities, finance/academics, hr/it, admissions/academics) need `pair_margin` instead of `margin` to answer.",
+        "- `cal_answer` is fixed at 0.55. Direct Answer Rate = simple held-out queries routed to the correct domain with action `answer`.",
         "- These numbers come from a single run on the held-out split and were not used for tuning.",
         "",
-    ])
+    ]
 
+
+def _fresh_section(fresh_results):
+    if fresh_results is None:
+        return ["## Fresh Set\n", "Not run: `tests/fresh_eval.json` does not exist.", ""]
+    return [
+        "## Fresh Set (never seen during development)\n",
+        "| Metric | Value |",
+        "|---|---|",
+        f"| Queries | {fresh_results['total_queries']} |",
+        f"| Routing Accuracy | {fresh_results['routing_accuracy']}% |",
+        f"| Resolution Rate | {fresh_results['resolution_rate']}% |",
+        f"| Direct Answer Rate | {fresh_results['direct_answer_rate']}% |",
+        f"| Out-of-Scope Handoff Recall | {fresh_results['handoff_accuracy']}% |",
+        f"| Macro-F1 | {fresh_results['macro_f1']} |",
+        "",
+    ]
+
+
+def write_report(results, fresh_results=None):
+    lines = [
+        "# NexusAI Evaluation Report\n",
+        f"**Dataset:** {results.get('label', 'held-out test set')}",
+        f"**Total Queries:** {results['total_queries']}",
+        "**Split:** Stratified shuffled 60/40, seed 42\n",
+    ]
+    lines += _summary_section(results)
+    lines += _per_domain_section(results)
+    lines += _per_type_section(results)
+    lines += _tradeoff_section(results)
+    lines += _fresh_section(fresh_results)
+    lines += _methodology_section()
     with open(REPORT_PATH, "w", encoding="utf-8") as f:
         f.write("\n".join(lines))
     print(f"Report saved to {REPORT_PATH}")
+
+
+def evaluate_fresh_set_once():
+    if not FRESH_PATH.exists():
+        print("\nFresh set skipped: tests/fresh_eval.json does not exist.")
+        return None
+    with open(FRESH_PATH, "r", encoding="utf-8") as f:
+        fresh_queries = json.load(f)
+    fresh_results, _ = evaluate(fresh_queries, label="fresh set, never seen during development")
+    return fresh_results
 
 
 if __name__ == "__main__":
@@ -434,7 +531,8 @@ if __name__ == "__main__":
     print()
 
     results, passed = evaluate(test_set, label="held-out test set (stratified, seed=42)")
+    fresh = evaluate_fresh_set_once() if "--final" in sys.argv else None
     write_results(results)
-    write_report(results)
+    write_report(results, fresh)
 
     sys.exit(0 if passed else 1)

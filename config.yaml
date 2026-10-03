@@ -6,18 +6,25 @@ domains:
 - academics
 - admissions
 routing:
-  t_high: 0.42
-  t_low: 0.15
-  margin: 0.02
+  margin: 0.04
   cal_answer: 0.55
-  cal_low: 0.52
+  cal_low: 0.0
   tfidf_weight: 0.35
   keyword_weight: 0.25
   classifier_weight: 0.4
   calibration:
-    coef_score: 7.8598
-    coef_margin: 7.0531
-    intercept: -0.9363
+    coef_score: 0.3411
+    coef_margin: 2.2212
+    intercept: 3.6182
+  other_threshold: 0.3
+  sim_floor: 0.02
+  answer_floor: 0.0
+  pair_margin: 0.08
+  overlap_pairs:
+  - finance|facilities
+  - finance|academics
+  - hr|it
+  - admissions|academics
 retrieval:
   top_k: 3
   bm25_weight: 0.45
